@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BharatTravel - Your Premium Gateway to Global Experiences</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-tertiary-container": "#ef875e",
+                    "surface-container": "#eeeeee",
+                    "primary": "#002155",
+                    "on-primary-container": "#7fa1f2",
+                    "on-primary-fixed": "#001945",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dadada",
+                    "on-surface": "#1a1c1c",
+                    "on-tertiary-fixed": "#380d00",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary-container": "#ff5722",
+                    "primary-fixed": "#d9e2ff",
+                    "primary-fixed-dim": "#b0c6ff",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#ffb5a0",
+                    "inverse-surface": "#2f3131",
+                    "tertiary-fixed-dim": "#ffb59a",
+                    "tertiary-container": "#692101",
+                    "surface-variant": "#e2e2e2",
+                    "on-secondary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#541100",
+                    "on-primary-fixed-variant": "#1a438e",
+                    "on-tertiary-fixed-variant": "#7b2e0d",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-surface-variant": "#434651",
+                    "on-tertiary": "#ffffff",
+                    "secondary": "#b02f00",
+                    "surface-tint": "#375ca8",
+                    "inverse-on-surface": "#f1f1f1",
+                    "on-secondary-fixed": "#3b0900",
+                    "on-primary": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-background": "#1a1c1c",
+                    "surface": "#f9f9f9",
+                    "surface-bright": "#f9f9f9",
+                    "tertiary": "#451200",
+                    "secondary-fixed": "#ffdbd1",
+                    "primary-container": "#003580",
+                    "surface-container-low": "#f3f3f3",
+                    "on-secondary-fixed-variant": "#862200",
+                    "outline-variant": "#c4c6d3",
+                    "outline": "#747782",
+                    "inverse-primary": "#b0c6ff",
+                    "background": "#f9f9f9"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "lg": "24px",
+                    "base": "8px",
+                    "container-max": "1280px",
+                    "sm": "8px",
+                    "md": "16px",
+                    "xl": "32px",
+                    "xxl": "48px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "body-sm": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-tab-indicator {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background-color: #003580;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-background selection:bg-primary-fixed selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-[#003580] dark:bg-slate-950 shadow-lg shadow-blue-900/20 z-[100] h-20">
+<div class="flex justify-between items-center w-full h-full px-6 md:px-12 max-w-7xl mx-auto">
+<div class="flex items-center gap-12">
+<div class="text-2xl font-bold text-white tracking-tight font-['Plus_Jakarta_Sans']">GK Immigration</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-white border-b-2 border-[#FF5722] pb-1 transition-colors duration-200" href="#services">Services</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-blue-100/80 hover:text-white transition-colors duration-200" href="#visas">Visas</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-blue-100/80 hover:text-white transition-colors duration-200" href="#destinations">Destinations</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-blue-100/80 hover:text-white transition-colors duration-200" href="#about">About Us</a>
+<a class="font-['Plus_Jakarta_Sans'] text-sm font-medium text-blue-100/80 hover:text-white transition-colors duration-200" href="#contact">Contact</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center gap-2 text-white font-['Plus_Jakarta_Sans'] text-sm font-medium hover:text-white transition-colors duration-200">
+<span class="material-symbols-outlined">track_changes</span>
+<span>Track My Application</span>
+</button>
+<button class="bg-secondary-container text-white px-6 py-2.5 rounded-lg font-['Plus_Jakarta_Sans'] text-sm font-semibold hover:shadow-lg hover:shadow-secondary-container/20 transition-all">
+        Sign In
+      </button>
+</div>
+</div>
+</nav>
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A high-quality panoramic composition of global landmarks including the Statue of Liberty, Eiffel Tower, and Sydney Opera House, representing the global reach of BharatTravel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx0tsiwq14M-HQwQ9ZJHPnEtWDJwqsjjXRFf_4nexcBhHAurY_1WboONRT2T-8xyfhcPEyWS72zbK6xkT9S0URsLsyvXOVdhLwRFkte0wI9bOzDM2hNNzkMS1YwOOXCKeNMCAD6PLHqPRqkpXJaEnP1ep_P6Y9HCyBkL3V4f92coSkjhElyhegloUwG2AiF726_JTtqL8KtuL-CSQjOiY5SNj6y1xdtgUFjrd1L4hs3tGn8Ikky2WF34HPvBMkGfnOfnkLgzEfdSQ"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-8 w-full py-xxl">
+<div class="max-w-2xl mb-xl">
+<h1 class="font-display-xl text-white text-[56px] leading-[1.1] mb-6">Explore the World,<br/>Trusted by Millions.</h1>
+<p class="font-body-lg text-white/90 max-w-lg">Seamless flights, instant visas, and curated global tours tailored to your unique travel dreams.</p>
+</div>
+<!-- Multi-Tab Search -->
+<div class="bg-white rounded-xl shadow-xl p-2 max-w-5xl">
+<div class="flex gap-4 p-4 border-b border-surface-container">
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md transition-colors">
+<span class="material-symbols-outlined">flight</span> Flights
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-white font-label-md">
+<span class="material-symbols-outlined">description</span> Visas
+                        </button>
+<button class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-surface-container text-on-surface-variant font-label-md transition-colors">
+<span class="material-symbols-outlined">map</span> Tours
+                        </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4 p-6">
+<div class="space-y-1 md:col-span-1">
+<label class="text-xs font-bold uppercase text-outline tracking-wider">Country</label>
+<div class="flex items-center gap-2 border-b-2 border-surface-container-high py-2 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary">public</span>
+<input class="w-full bg-transparent border-none focus:ring-0 font-semibold p-0" placeholder="Select Destination" type="text"/>
+</div>
+</div>
+<div class="space-y-1 md:col-span-2">
+<label class="text-xs font-bold uppercase text-outline tracking-wider">Type of Visa</label>
+<div class="flex items-center gap-2 border-b-2 border-surface-container-high py-2 focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-primary">fact_check</span>
+<select class="w-full bg-transparent border-none focus:ring-0 font-semibold p-0 appearance-none cursor-pointer">
+<option disabled="" selected="" value="">Select Visa Type</option>
+<option>Tourist Visa</option>
+<option>Student Visa</option>
+<option>Visitor Visa</option>
+<option>SOWP (Spouse Open Work Permit)</option>
+<option>Business Visa</option>
+</select>
+</div>
+</div>
+<button class="bg-secondary-container text-white h-full rounded-lg font-headline-sm hover:brightness-110 transition-all flex items-center justify-center gap-2 shadow-lg shadow-secondary-container/30">
+                            Check Eligibility <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Trust Bar -->
+<section class="bg-white py-12 border-b border-surface-container">
+<div class="max-w-7xl mx-auto px-8 flex flex-wrap justify-between items-center gap-8">
+<div class="flex items-center gap-4">
+<img alt="Google" class="h-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuriZH9XRoFm339yiB1VXtBIFn2_w40s96JRCC4nKMmhTyZxYDPE3URIQbDebrIMh13ezrTqkmvBakXNTizWSn15eDS4kWJLQDCZ1-L8_Kr7V0-ou5fX001BgMT_MimezBd6d7jWFO6-pCd_3PrpcqVkgTGYpzVXAAutRaEEc9jK0kxZ_pU1ZtE0e8m9QdW4arUamuSbjK6py2iSBW7y7HkLfps3PsLGKANuHNRbNsClvFvAOK2v8z9yr8myBhrtIARnK_iBRCwFg"/>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-yellow-500" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="ml-2 font-bold text-on-surface">4.8/5 (12,000+ Reviews)</span>
+</div>
+</div>
+<div class="flex items-center gap-8 grayscale opacity-60">
+<img alt="IATA" class="h-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRW_WDeQot4GxQdRclRkDnwCxZOLjc4E500EoCAbm-FYR8n0zloZWncwMTGZYmjIfr544pdgMm7v-E88DVx4bllbql8z3vw5hXb6JT0RlHjVDKpevdhyFp6RyL8AXDoyt0Jfo18-2GoLaiNbC6VvjvL1HzPsGZ274ollCzDkzvZKm5uLYNDGJlpPiiZihye3YK2ybJFWT7PXIi75A4TODE4nlp_BKDy3Zgd2fgvz39USLFUIEtLdhzwIAiWlLgdQXu_suj7VudjR8"/>
+<div class="flex items-center gap-2 font-bold text-primary">
+<span class="material-symbols-outlined">verified</span>
+<span>Ministry of Tourism Approved</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Cards -->
+<section class="py-xxl bg-surface">
+<div class="max-w-7xl mx-auto px-8 text-center mb-xl">
+<h2 class="font-headline-lg text-primary mb-4">Complete Travel Ecosystem</h2>
+<p class="font-body-md text-outline max-w-2xl mx-auto">From the first step of your visa application to the final flight home, we handle every detail with precision and care.</p>
+</div>
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter"><!-- Instant Visas -->
+<div class="group bg-white p-8 rounded-xl border border-surface-container-high hover:border-primary transition-all duration-300 hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">badge</span>
+</div>
+<h3 class="font-headline-sm mb-3">Instant Visas</h3>
+<p class="font-body-sm text-outline mb-6">Expert visa assistance for 50+ countries with a 98% success rate.</p>
+<a class="text-primary font-bold flex items-center gap-2 group-hover:text-secondary-container" href="#">Check Requirements <span class="material-symbols-outlined text-sm">east</span></a>
+</div>
+<!-- Air Tickets -->
+<div class="group bg-white p-8 rounded-xl border border-surface-container-high hover:border-primary transition-all duration-300 hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">flight_takeoff</span>
+</div>
+<h3 class="font-headline-sm mb-3">Air Tickets</h3>
+<p class="font-body-sm text-outline mb-6">Book international and domestic flights at the best rates with 24/7 support.</p>
+<a class="text-primary font-bold flex items-center gap-2 group-hover:text-secondary-container" href="#">Explore Deals <span class="material-symbols-outlined text-sm">east</span></a>
+</div>
+<!-- Luxury Tours -->
+<div class="group bg-white p-8 rounded-xl border border-surface-container-high hover:border-primary transition-all duration-300 hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">hiking</span>
+</div>
+<h3 class="font-headline-sm mb-3">Luxury Tours</h3>
+<p class="font-body-sm text-outline mb-6">Curated holiday packages that combine comfort, adventure, and culture.</p>
+<a class="text-primary font-bold flex items-center gap-2 group-hover:text-secondary-container" href="#">View Packages <span class="material-symbols-outlined text-sm">east</span></a>
+</div>
+<!-- Travel Insurance -->
+<div class="group bg-white p-8 rounded-xl border border-surface-container-high hover:border-primary transition-all duration-300 hover:-translate-y-2">
+<div class="w-16 h-16 bg-primary-fixed rounded-2xl flex items-center justify-center mb-6 text-primary-container group-hover:bg-primary group-hover:text-white transition-all">
+<span class="material-symbols-outlined text-3xl">verified_user</span>
+</div>
+<h3 class="font-headline-sm mb-3">Travel Insurance</h3>
+<p class="font-body-sm text-outline mb-6">Comprehensive travel protection to ensure peace of mind on every journey.</p>
+<a class="text-primary font-bold flex items-center gap-2 group-hover:text-secondary-container" href="#">Get Quote <span class="material-symbols-outlined text-sm">east</span></a>
+</div></div>
+</section>
+<!-- Destination Grid -->
+<section class="py-xxl max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-xl">
+<div>
+<h2 class="font-headline-lg text-primary mb-2">Trending Destinations</h2>
+<p class="font-body-md text-outline">Handpicked favorites by GK Immigration explorers this season.</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 border-b-2 border-transparent hover:border-primary transition-all pb-1">
+                    See All Destinations <span class="material-symbols-outlined">arrow_right_alt</span>
+</button>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-gutter h-[600px]">
+<div class="md:col-span-2 md:row-span-2 relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A spectacular vertical shot of the Burj Khalifa and the Dubai skyline at twilight. The sky is a deep indigo blue, and the city lights sparkle with a warm golden glow. The image uses a high-contrast style with sharp architectural details, embodying a premium and futuristic travel vibe. The overall atmosphere is energetic and opulent, showcasing luxury urban travel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC48VmhCRK3lNKgA___GpCDNF9C1usewJ6GZDvRT8v6zgZZm-4-HiN-z5Cm8ePz_iZ4RSzhGtbjHOQsQUf2tx9MEHhi1MGcIWubiK9FqsDDW4dCzeZiBnjkYEVDGsG4rheZQulzvLNqW529S25TSfkPgqnsfSX-z944qc-Z_vA4mMnUH0JwxtOK9IMiwBFpDG20IpRYWN8xRnOYuIDpldm6AxkVnt11Xi_E66yCZyb9JczK9tZUF16dAGWiqcDO_omFGo9bjxHxdvE"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8">
+<span class="bg-secondary-container text-white px-3 py-1 rounded-full text-[10px] font-bold uppercase mb-3 inline-block">Best Seller</span>
+<h3 class="text-white font-headline-lg">Dubai Excellence</h3>
+<p class="text-white/80 font-body-sm mb-4">Starting from ₹45,000</p>
+<button class="bg-white text-primary px-6 py-2 rounded-lg font-bold hover:bg-primary hover:text-white transition-all">Book Now</button>
+</div>
+</div>
+<div class="md:col-span-2 relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A serene Balinese infinity pool overlooking a lush, tropical jungle at sunrise. The soft morning mist hangs between the palm trees, and the light is warm and ethereal. The design palette features deep emerald greens, soft blues, and warm mahogany tones. This high-end landscape photo evokes tranquility and premium resort luxury, perfect for high-end travel branding." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSz4E2XxWT9KUpPjWmBRaeCZgqFfhZ3WUBy_VsPR_9lH2BP6MhNYZkhtoSyBLBzMFAIS1rYW3bGahbA40N8Dvk76u27_fxH5r7iyU84flUV9pXn0drgCfmJZG40reV6-HLidmpC2sl-EpSPVPAXNzsOxFjiEbJOkssqUGouoy2cskkNpWHSs6j7zwR8z9Smhvqyooutq942mxuHj6vol5krF-I-h0PNlO8AXQKhMxugRd34hOqh49K_5iMDBy2B43DGUAqrXWaqsw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-white font-headline-md">Bali Retreats</h3>
+<p class="text-white/80 font-body-sm">Starting from ₹38,500</p>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A sun-drenched beach in Goa with white sand, blue water, and swaying palm trees under a bright midday sun. The lighting is crisp and clear, creating a cheerful and vibrant light-mode aesthetic. The color palette is composed of turquoise blues, bright whites, and lush greens, capturing the essence of a high-quality seaside vacation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKCYHl4TIhezVJZZSx7tDEhVqFVZEUyjuw1ing0mzwZ9tDNcd_dh9eZu4ztojO7GAWB3onN1A3WDFYhR0jUWBon-gN9DNBoNKt7ZD9Txh7LHkwgYOyVtj-Au3QhrDv7W70Ftf23GAjRnCAaPzW8xPALkrp07GCutbZ-tOySdlNi6xL2V8g14Co59QV-NJ25svjzyrN0QoINiw-3-dZBezr4PecDbMEZ0vlYAqSbJ5IkOsnbABOz6S1y_yLkKme6S3Od1T2-nR3Acw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-white font-headline-sm">Sunny Goa</h3>
+<p class="text-white/80 font-body-sm">Starting from ₹12,000</p>
+</div>
+</div>
+<div class="relative rounded-2xl overflow-hidden group">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A peaceful Kerala houseboat floating on a calm backwater canal surrounded by dense coconut groves at sunset. The water reflects the warm oranges and purples of the sky, creating a rich and inviting color palette. The visual style is traditional yet refined, representing the soulful and authentic travel experiences of Southern India." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbt4xBJTf-PMTJtIMeTx6VtNVavX6z2IB7fHXtrJxlI-CKENDRM2ab7TiNSm9fjSfYq6rBz1__E4_aEbZLH9sQJSa5_o_nWa3W8hfIArvlrqzn8SR3h3IiVCMvcqGirwKexVOUQtWyzWXQfCA5qxhlbWXTB3uxjW7kl0nZquiQTPg2Cz--SnYJ-m3cS7oFGKTGC1B_2SpPhylS0GIk62FgRb7fCoZ27ikIvphCASPcePep1zsxtXsJpnRk5OdAPyDEnGZT1xNR93c"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<h3 class="text-white font-headline-sm">Kerala Backwaters</h3>
+<p class="text-white/80 font-body-sm">Starting from ₹22,000</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Instagram Reels Preview Section -->
+<!-- Testimonials Slider -->
+<section class="py-xxl bg-white">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-xl items-center">
+<div class="lg:col-span-4">
+<h2 class="font-headline-lg text-primary mb-6">Why our travelers<br/>love us.</h2>
+<p class="font-body-md text-outline mb-8">We don't just book trips; we create memories that last a lifetime. Read what our community has to say.</p>
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="lg:col-span-8">
+<div class="flex gap-gutter overflow-hidden">
+<div class="flex-shrink-0 w-[400px] bg-surface p-8 rounded-2xl">
+<div class="flex text-yellow-500 mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-8">"BharatTravel made our Dubai trip absolutely effortless. From the visa process to the final airport drop-off, everything was perfectly organized. Their local guides are phenomenal!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim"></div>
+<div>
+<p class="font-bold">Rahul Mehra</p>
+<p class="text-xs text-outline">Travelled to Dubai</p>
+</div>
+</div>
+</div>
+<div class="flex-shrink-0 w-[400px] bg-surface p-8 rounded-2xl">
+<div class="flex text-yellow-500 mb-4">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-on-surface mb-8">"I was worried about my UK visa, but BharatTravel's team handled the paperwork so professionally. I got my approval within 10 days. Truly a life-saver for frequent travelers!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed-dim"></div>
+<div>
+<p class="font-bold">Anita Sharma</p>
+<p class="text-xs text-outline">Travelled to London</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<section class="py-xxl bg-primary-container text-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-8 mb-xl flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-gradient-to-tr from-yellow-400 via-red-500 to-purple-600 rounded-full p-[2px]">
+<div class="bg-primary-container rounded-full w-full h-full flex items-center justify-center">
+<span class="material-symbols-outlined">photo_camera</span>
+</div>
+</div>
+<div>
+<h2 class="font-headline-md">Captured by GK Immigrants</h2>
+<p class="text-on-primary-container text-sm font-label-md">Join our 250k+ Instagram community</p>
+</div>
+</div>
+<button class="bg-white/10 hover:bg-white/20 border border-white/20 px-6 py-2.5 rounded-full font-bold transition-all flex items-center gap-2">Follow @GKImmigration <span class="material-symbols-outlined text-sm">open_in_new</span></button>
+</div>
+<div class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<div class="aspect-[9/16] rounded-2xl overflow-hidden relative group">
+<img alt="Travel Reel 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDdD_TNItPRPdI5cGx1P-PRrjDd5S-lqR5ej3eIyhLSTlXbkW9dwiR3OQrxCsL3b7lgn6PmXLW6pUG51ZHgu_CIVY2wEZIHx-vZUHdYylNxDUVE9itm__D0oWTZ2LLc8Gg9pUDM9WIJaAEt0uijUAy4bDoQSHUVVZ7CKhlHv0B5MAAJT4d2Sf2sLRfWuRxIoT8MpkQgJ3JCuBQWfqCZP22zkhuBs6_DEzFugtoXQ55GsDjMKbdlcSvFAoCZhGOh2n4Ru7Xh5F48kA"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+<span class="text-[10px] font-bold">12.5k</span>
+</div>
+</div>
+<div class="aspect-[9/16] rounded-2xl overflow-hidden relative group">
+<img alt="Travel Reel 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7FT95hppuvMYnGR3Oae3pb9u4n5xo4kwF3Dpkb22LOPseYSAnQ4bxiD72JLbzyUPxqcFxlLYtJ5zamP5KX3q_teHx8tAwmXBshpzoVG8465rypebkh7VVxk_EbHiVpYWqu0dzcR5DAGFMR3wTZvCpe1KJFU05H9TUZEHyuriUUhO__ywADmQSMiY2oCedw99YmY5OTog2AAOXN2M_4Pl7fA54xUvCAEbGE4soTAW3KY5Wh2L_tze7PyA6fTXyp5foys_d1_JbuVg"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+<span class="text-[10px] font-bold">8.9k</span>
+</div>
+</div>
+<div class="aspect-[9/16] rounded-2xl overflow-hidden relative group">
+<img alt="Travel Reel 3" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6C_x0r2v0Xioqc-3Gdxfpx49NP17YcgsFW_DTVNRRJVf6iKrm3MeM7DuVSuIAsO2A9SsAgkQ_Snc7T2g7m-NTeJAlgbY79ZAovE7dIRQqHLWdbeq2gtDhJQYqLai_7Dmpvo5B4gHkfnmeHWEKw-ul0j97qR8ZX46T2johcthl8HfXeIbe3Gzdjm8L6FLeotM03eeMy-oMs5tDgeZ8NBA8faWF821mYBEKzS8Ki0M4D_Rl2z1zQSy_v1KbbbXgoT4-dKMsSNyB3nQ"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+<span class="text-[10px] font-bold">15.2k</span>
+</div>
+</div>
+<div class="aspect-[9/16] rounded-2xl overflow-hidden relative group">
+<img alt="Travel Reel 4" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAenht-nOTsNvRO3pCp3NETzbfwVSiXmy5mNjTCmeHbXt84I41KIa2EM_kkPN3_SIRR05IudrcmbYtbiPwjhT3TIu_0G5U0TPilPnWo_wyAYm3A-gUsNsJRdtEcrtPTRMmnj1ulQcdpaqBrruWfAbGF8Xv5hvq8D6zBAnq025yLjETLBDgkOe8u920i6p_0eqwp8ic_DB7ARu9m-uhVJk2dJnmDfTW_GHPYZ6a3pb3Yy1cBgK6M39Ut-T86iQ6mGIeYUIo9ST0xT5A"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+<span class="text-[10px] font-bold">11.1k</span>
+</div>
+</div>
+<div class="aspect-[9/16] rounded-2xl overflow-hidden relative group">
+<img alt="Travel Reel 5" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-uLrIe1-gMUyIzXfby14SOt4d1ZzQWD1l8m0k4X4qqJ6I-r_flV_CxD_pPpGM-cTmG6-07o2q6h3Fp01sdrvouiH4JqapG18_KMSEkg8o1EtizwEgQB1u2UoweOz9IQMY30cbA-aoGckmA2aTyLtF1zto4NKFgWjYbVSRQVVaffLgScWW9J603CshQ0gdzRzF4uglW-WIhjf00jmr9D04J0l-D3tcA-rFWO9jTgdAGi1y6nlKw9QOn65qSbWTEmBq1SCzcajalII"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-all"></div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+<span class="text-[10px] font-bold">20.4k</span>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-xxl bg-surface border-t border-surface-container">
+<div class="max-w-7xl mx-auto px-8">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-primary mb-4">Our Recent Intakes</h2>
+<p class="font-body-md text-outline max-w-2xl mx-auto">Proudly partnering with world-class educational institutions and leading global airlines to ensure your success.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center opacity-80">
+<!-- Educational Institutions -->
+<div class="flex justify-center p-4">
+<img alt="Sault College Logo" class="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=Sault+College'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="University of Wollongong Logo" class="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=UOW'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Canadore College Logo" class="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=Canadore'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Conestoga College Logo" class="h-12 md:h-16 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=Conestoga'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<!-- Airline Partners -->
+<div class="flex justify-center p-4">
+<img alt="Philippine Airlines Logo" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=Philippine+Airlines'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuEn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Thai Airways Logo" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=Thai+Airways'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuFn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="Qatar Airways Logo" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=Qatar+Airways'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuGn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+<div class="flex justify-center p-4">
+<img alt="British Airways Logo" class="h-10 md:h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300" onerror="this.src='https://placehold.co/200x80?text=British+Airways'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuHn_5f1_zXvN-Yv5_o_4_Z_C_Q_X_K_L_M_N_O_P_Q_R_S_T_U_V_W_X_Y_Z"/>
+</div>
+</div>
+</div>
+</section><footer class="bg-slate-50 dark:bg-slate-900 w-full border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto py-12 px-8 flex flex-col md:flex-row justify-between gap-8 font-['Plus_Jakarta_Sans']">
+<div class="space-y-4 max-w-xs">
+<div class="text-xl font-black text-[#003580] dark:text-white">GK Immigration</div>
+<p class="text-sm leading-relaxed text-slate-500 dark:text-slate-400">
+        GK Immigration, Near SBI Bank, New Bus Stand, Bhawanigarh. Your trusted global travel partner for visa excellence and curated experiences.
+      </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors cursor-pointer">public</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors cursor-pointer">chat</span>
+<span class="material-symbols-outlined text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors cursor-pointer">mail</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-8 flex-1">
+<div class="space-y-4">
+<h4 class="font-bold text-sm text-[#003580] dark:text-blue-400 uppercase tracking-widest">Services</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Flight Bookings</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Global Visas</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Group Tours</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-sm text-[#003580] dark:text-blue-400 uppercase tracking-widest">Legal</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Cookie Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-bold text-sm text-[#003580] dark:text-blue-400 uppercase tracking-widest">Support</h4>
+<ul class="space-y-2">
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Sitemap</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Partner Login</a></li>
+<li><a class="text-sm text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-8 border-t border-slate-200 dark:border-slate-800">
+<p class="text-sm text-slate-500 dark:text-slate-400 text-center">
+      © 2024 GK Immigration. Your Trusted Global Travel Partner. Recognized by Ministry of Tourism.
+    </p>
+</div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-16 md:hidden bg-white/90 dark:bg-gray-950/90 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 shadow-[0_-4px_12px_rgba(0,53,128,0.08)]">
+<a class="flex flex-col items-center text-[#FF5722]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold">Home</span>
+</a>
+<a class="flex flex-col items-center text-gray-400" href="#">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold">My Bookings</span>
+</a>
+<a class="flex flex-col items-center text-gray-400" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold">Support</span>
+</a>
+<a class="flex flex-col items-center text-gray-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold">Account</span>
+</a>
+</nav>
+<!-- Sticky WhatsApp Button -->
+<a class="fixed bottom-24 md:bottom-8 right-8 z-[110] bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform cursor-pointer" href="https://wa.me/911234567890" target="_blank">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</a>
+</body></html>

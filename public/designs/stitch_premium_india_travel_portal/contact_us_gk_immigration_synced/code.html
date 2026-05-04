@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Us - GK Immigration</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e2e2e2",
+                      "surface-container-highest": "#e2e2e2",
+                      "surface": "#f9f9f9",
+                      "tertiary-fixed-dim": "#ffb59a",
+                      "surface-bright": "#f9f9f9",
+                      "background": "#f9f9f9",
+                      "on-background": "#1a1c1c",
+                      "surface-tint": "#375ca8",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#692101",
+                      "on-secondary-fixed": "#3b0900",
+                      "surface-container-lowest": "#ffffff",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#e8e8e8",
+                      "on-secondary": "#ffffff",
+                      "on-error": "#ffffff",
+                      "primary": "#002155",
+                      "on-surface": "#1a1c1c",
+                      "inverse-primary": "#b0c6ff",
+                      "surface-container-low": "#f3f3f3",
+                      "secondary-fixed-dim": "#ffb5a0",
+                      "error": "#ba1a1a",
+                      "secondary-container": "#ff5722",
+                      "secondary-fixed": "#ffdbd1",
+                      "on-tertiary-fixed-variant": "#7b2e0d",
+                      "on-primary-fixed-variant": "#1a438e",
+                      "tertiary-fixed": "#ffdbcf",
+                      "outline-variant": "#c4c6d3",
+                      "inverse-on-surface": "#f1f1f1",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-container": "#ef875e",
+                      "surface-dim": "#dadada",
+                      "on-tertiary-fixed": "#380d00",
+                      "on-surface-variant": "#434651",
+                      "on-primary-container": "#7fa1f2",
+                      "surface-container": "#eeeeee",
+                      "outline": "#747782",
+                      "primary-fixed": "#d9e2ff",
+                      "primary-container": "#003580",
+                      "on-primary": "#ffffff",
+                      "inverse-surface": "#2f3131",
+                      "primary-fixed-dim": "#b0c6ff",
+                      "on-secondary-fixed-variant": "#862200",
+                      "on-secondary-container": "#541100",
+                      "secondary": "#b02f00",
+                      "on-primary-fixed": "#001945",
+                      "tertiary": "#451200"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "xxl": "48px",
+                      "xs": "4px",
+                      "gutter": "24px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "container-max": "1280px",
+                      "base": "8px",
+                      "xl": "32px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "label-md": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "display-xl": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .contact-card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 53, 128, 0.08);
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- Top Navigation Bar -->
+<header class="bg-[#003580] dark:bg-slate-950 fixed top-0 w-full z-50 shadow-lg shadow-blue-900/20">
+<div class="max-w-7xl mx-auto h-20 px-6 md:px-12 flex justify-between items-center">
+<div class="text-2xl font-bold text-white tracking-tight font-['Plus_Jakarta_Sans']">GK Immigration</div>
+<nav class="hidden md:flex items-center space-x-8 font-['Plus_Jakarta_Sans'] text-sm font-medium">
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="#">Services</a>
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="#">Visas</a>
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="#">Destinations</a>
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="#">About Us</a>
+<a class="text-white border-b-2 border-[#FF5722] pb-1" href="#">Contact</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="hidden lg:block text-white text-sm font-medium hover:text-blue-100 transition-colors font-['Plus_Jakarta_Sans']">Sign In</button>
+<button class="bg-[#FF5722] text-white px-6 py-2.5 rounded-lg text-sm font-bold shadow-md hover:bg-[#E64A19] transition-all font-['Plus_Jakarta_Sans']">Track My Application</button>
+</div>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="relative h-[480px] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 bg-primary-container">
+<img class="w-full h-full object-cover opacity-30" data-alt="A professional and brightly lit modern office interior with large windows and clean surfaces. The atmosphere is corporate yet welcoming, featuring a blue and orange color scheme consistent with GK Immigration branding. Subtle digital overlays of a stylized world map suggest global reach and travel reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmwtn5TTm5V-QwSubjBnTKE7KviPzl3RoSRrN-0f7II3o5iIQdKn6SFqfes1o1lgbSPPResrHA5tQTUE3lB0FS6R1AZXXJN3YdBriDLGDa09Bl-n-0XX7BxezrzZPi4nLyeE3bCPsTkEsTZIsKPd6xbS-KgLhBJVxy8YluU2F6vppTkd9hKiSQ3jaKfMiy9Rt0rpPG6K6pctNwkc2cx_6gleWBub5VKSMVLLxBI3vNadoyvE85W6vprU5hr9hwa6syuvyaf55fwjY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-transparent to-primary-container/50"></div>
+</div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+<h1 class="font-display-xl text-white mb-4">Get in Touch with Us</h1>
+<p class="font-body-lg text-blue-100 mb-xl max-w-2xl mx-auto">We’re here to help you plan your perfect journey with expert guidance and seamless immigration services.</p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#25D366] text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+<span class="material-symbols-outlined">chat</span>
+                        Chat on WhatsApp
+                    </button>
+<button class="w-full sm:w-auto flex items-center justify-center gap-2 bg-[#FF5722] text-white px-8 py-4 rounded-xl font-bold text-lg hover:scale-105 transition-transform shadow-xl">
+<span class="material-symbols-outlined">call</span>
+                        Call Now
+                    </button>
+</div>
+</div>
+</section>
+<!-- Contact Content Grid -->
+<section class="max-w-7xl mx-auto px-6 -mt-20 relative z-20 mb-xxl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Inquiry Form Container -->
+<div class="lg:col-span-7 bg-white p-8 md:p-12 rounded-3xl contact-card-shadow border border-slate-100">
+<div class="mb-8">
+<h2 class="font-headline-lg text-primary mb-2">Send us a Message</h2>
+<p class="text-on-surface-variant font-body-md">Fill out the form below and our experts will get back to you within 24 hours.</p>
+</div>
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-primary px-1">Full Name</label>
+<input class="w-full h-12 px-4 rounded-xl border border-slate-200 focus:border-[#003580] focus:ring-2 focus:ring-[#003580]/10 transition-all outline-none" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary px-1">Phone Number <span class="text-secondary">*</span></label>
+<input class="w-full h-12 px-4 rounded-xl border border-slate-200 focus:border-[#003580] focus:ring-2 focus:ring-[#003580]/10 transition-all outline-none" placeholder="+91-XXXXX-XXXXX" required="" type="tel"/>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-md text-primary px-1">Email Address</label>
+<input class="w-full h-12 px-4 rounded-xl border border-slate-200 focus:border-[#003580] focus:ring-2 focus:ring-[#003580]/10 transition-all outline-none" placeholder="john@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary px-1">Service Type</label>
+<select class="w-full h-12 px-4 rounded-xl border border-slate-200 focus:border-[#003580] focus:ring-2 focus:ring-[#003580]/10 transition-all outline-none appearance-none bg-white">
+<option>Visa Services</option>
+<option>Air Tickets</option>
+<option>Tour Packages</option>
+<option>Travel Insurance</option>
+</select>
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-primary px-1">Your Message</label>
+<textarea class="w-full p-4 rounded-xl border border-slate-200 focus:border-[#003580] focus:ring-2 focus:ring-[#003580]/10 transition-all outline-none resize-none" placeholder="How can we help you?" rows="4"></textarea>
+</div>
+<button class="w-full bg-[#FF5722] text-white font-bold py-4 rounded-xl shadow-lg hover:bg-[#E64A19] transition-colors flex items-center justify-center gap-2" type="submit">
+                            Get Free Consultation
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Info Column -->
+<div class="lg:col-span-5 space-y-8">
+<!-- Info Cards Bento -->
+<div class="grid grid-cols-1 gap-6">
+<!-- Location Card -->
+<div class="bg-white p-6 rounded-2xl contact-card-shadow flex gap-4 border border-slate-100">
+<div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-primary mb-1">Our Office</h3>
+<p class="text-on-surface-variant font-body-sm leading-relaxed">GK Immigration, Near SBI Bank, New Bus Stand, Bhawanigarh</p>
+</div>
+</div>
+<!-- Contact Details Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-6 rounded-2xl contact-card-shadow flex gap-4 border border-slate-100">
+<div class="w-10 h-10 rounded-lg bg-orange-50 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined">call</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Call Us</p>
+<p class="text-primary font-bold text-sm">+91-84370-26369</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-2xl contact-card-shadow flex gap-4 border border-slate-100">
+<div class="w-10 h-10 rounded-lg bg-blue-50 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div>
+<p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Email Us</p>
+<p class="text-primary font-bold text-sm">info@gkimmigration.com</p>
+</div>
+</div>
+</div>
+<!-- Business Hours -->
+<div class="bg-[#003580] p-8 rounded-2xl shadow-xl text-white flex items-center justify-between">
+<div class="flex gap-4 items-center">
+<span class="material-symbols-outlined text-orange-400 text-3xl">schedule</span>
+<div>
+<h3 class="font-bold text-lg">Business Hours</h3>
+<p class="text-blue-100/80 text-sm">Mon – Sat, 10 AM – 7 PM</p>
+</div>
+</div>
+<div class="h-10 w-px bg-white/20"></div>
+<div class="text-center">
+<p class="text-orange-400 font-bold text-xs uppercase tracking-widest">Sunday</p>
+<p class="font-bold">Closed</p>
+</div>
+</div>
+<!-- Map Card -->
+<div class="bg-white rounded-3xl overflow-hidden contact-card-shadow border border-slate-100 h-[300px] relative">
+<img class="w-full h-full object-cover" data-alt="A stylized overhead map visualization of Bhawanigarh, Punjab, highlighting the central hub near the New Bus Stand. The map uses a clean, modern aesthetic with soft blues and grays, featuring a distinct orange pin for GK Immigration's location near SBI Bank. The visual style is clear and helpful, emphasized by professional cartography lighting." data-location="Bhawanigarh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7G7l9wE4Fctb-7iT8nX1D1jUiOsXeMhiqW3394bLz61EZ4lFO8PBOZMxjgH4kZXObMITwqUeBbgMmnLCsYVMDZvZ0ITPCT431nYlYXOFtH-LRFoJHkI5YHiF_W8FPML-kEBSpnH7_rO4G1BrUTH5njUogjbtBkoTxrIAJ8dYnG2X5JQR8bxqMK6JXyoYcEsLPXrSAiwWVw1HekIoMJerM9fQ0ZcuRo4VWLgAwJD07X1eStTbxuiYmLIMN_5buQw5FYl9qvauKchE"/>
+<div class="absolute bottom-6 left-6 right-6">
+<button class="w-full bg-white text-primary font-bold py-3 px-6 rounded-xl shadow-lg flex items-center justify-center gap-2 hover:bg-slate-50 transition-colors">
+<span class="material-symbols-outlined">directions</span>
+                                    Get Directions
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQs Section -->
+<section class="max-w-4xl mx-auto px-6 mb-xxl">
+<div class="text-center mb-12">
+<span class="text-secondary font-bold text-sm tracking-widest uppercase mb-2 block">Common Questions</span>
+<h2 class="font-headline-lg text-primary">Frequently Asked Questions</h2>
+</div>
+<div class="space-y-4">
+<div class="bg-white p-6 rounded-2xl border border-slate-200">
+<button class="w-full flex items-center justify-between font-headline-sm text-primary text-left">
+                        How long does it take for a response?
+                        <span class="material-symbols-outlined text-slate-400">add</span>
+</button>
+<div class="mt-4 text-on-surface-variant font-body-md">
+                        We aim to respond to all inquiries within 24 business hours. For urgent matters, please use our WhatsApp or Call CTAs.
+                    </div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-200">
+<button class="w-full flex items-center justify-between font-headline-sm text-primary text-left">
+                        What documents do I need for initial consultation?
+                        <span class="material-symbols-outlined text-slate-400">add</span>
+</button>
+<div class="hidden mt-4 text-on-surface-variant font-body-md">
+                        Simply bring your valid passport and any previous visa details if available. Our experts will guide you further based on your target destination.
+                    </div>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-slate-200">
+<button class="w-full flex items-center justify-between font-headline-sm text-primary text-left">
+                        Are consultation sessions free?
+                        <span class="material-symbols-outlined text-slate-400">add</span>
+</button>
+<div class="hidden mt-4 text-on-surface-variant font-body-md">
+                        Yes, we offer an initial free consultation to understand your requirements and evaluate your profile for the best possible travel or visa outcomes.
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto py-12 px-8 flex flex-col md:flex-row justify-between gap-8 font-['Plus_Jakarta_Sans']">
+<div class="space-y-4 max-w-sm">
+<div class="text-xl font-black text-[#003580] dark:text-white">GK Immigration</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">GK Immigration, Near SBI Bank, New Bus Stand, Bhawanigarh</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">Providing expert immigration and travel solutions since 2010. Your trusted partner for global mobility and memorable journeys.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-8">
+<div class="space-y-4">
+<p class="font-bold text-[#003580] dark:text-blue-400">Quick Links</p>
+<div class="flex flex-col space-y-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors text-sm" href="#">Sitemap</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors text-sm" href="#">Partner Login</a>
+</div>
+</div>
+<div class="space-y-4">
+<p class="font-bold text-[#003580] dark:text-blue-400">Legal</p>
+<div class="flex flex-col space-y-2">
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors text-sm" href="#">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors text-sm" href="#">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors text-sm" href="#">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto py-6 px-8 border-t border-slate-200 dark:border-slate-800 text-center md:text-left font-['Plus_Jakarta_Sans']">
+<p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 GK Immigration. Your Trusted Global Travel Partner.</p>
+</div>
+</footer>
+<!-- WhatsApp Persistent Button -->
+<a class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform" href="https://wa.me/918437026369" target="_blank">
+<svg class="w-8 h-8 fill-current" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</a>
+<!-- Mobile Sticky Navigation -->
+<div class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white shadow-[0_-4px_20px_rgba(0,0,0,0.08)] flex justify-around items-center h-20 px-4">
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-bold uppercase">Services</span>
+</button>
+<div class="relative -top-6">
+<button class="bg-[#FF5722] text-white w-14 h-14 rounded-full shadow-lg shadow-orange-500/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</div>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined">chat</span>
+<span class="text-[10px] font-bold uppercase">Contact</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-500">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-bold uppercase">Profile</span>
+</button>
+</div>
+</body></html>

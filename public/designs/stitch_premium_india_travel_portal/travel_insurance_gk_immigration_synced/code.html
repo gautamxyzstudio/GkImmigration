@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f9f9f9",
+                      "error-container": "#ffdad6",
+                      "error": "#ba1a1a",
+                      "on-surface-variant": "#434651",
+                      "secondary-container": "#ff5722",
+                      "on-tertiary-container": "#ef875e",
+                      "outline-variant": "#c4c6d3",
+                      "surface-container-low": "#f3f3f3",
+                      "on-primary-container": "#7fa1f2",
+                      "surface-variant": "#e2e2e2",
+                      "surface-container": "#eeeeee",
+                      "primary": "#002155",
+                      "on-error-container": "#93000a",
+                      "surface-container-highest": "#e2e2e2",
+                      "on-tertiary-fixed-variant": "#7b2e0d",
+                      "on-primary": "#ffffff",
+                      "on-surface": "#1a1c1c",
+                      "secondary-fixed-dim": "#ffb5a0",
+                      "on-secondary-container": "#541100",
+                      "on-secondary-fixed": "#3b0900",
+                      "surface-dim": "#dadada",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#1a1c1c",
+                      "inverse-on-surface": "#f1f1f1",
+                      "tertiary-fixed": "#ffdbcf",
+                      "tertiary-fixed-dim": "#ffb59a",
+                      "inverse-primary": "#b0c6ff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-tint": "#375ca8",
+                      "primary-container": "#003580",
+                      "on-primary-fixed": "#001945",
+                      "on-error": "#ffffff",
+                      "secondary": "#b02f00",
+                      "primary-fixed": "#d9e2ff",
+                      "tertiary": "#451200",
+                      "surface-container-high": "#e8e8e8",
+                      "on-tertiary-fixed": "#380d00",
+                      "background": "#f9f9f9",
+                      "surface-bright": "#f9f9f9",
+                      "inverse-surface": "#2f3131",
+                      "tertiary-container": "#692101",
+                      "primary-fixed-dim": "#b0c6ff",
+                      "outline": "#747782",
+                      "on-secondary-fixed-variant": "#862200",
+                      "on-primary-fixed-variant": "#1a438e",
+                      "secondary-fixed": "#ffdbd1",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "sm": "8px",
+                      "container-max": "1280px",
+                      "xs": "4px",
+                      "md": "16px",
+                      "base": "8px",
+                      "xxl": "48px",
+                      "gutter": "24px",
+                      "xl": "32px",
+                      "lg": "24px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Inter"],
+                      "headline-sm": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "label-md": ["Inter"],
+                      "display-xl": ["Plus Jakarta Sans"],
+                      "body-sm": ["Inter"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "display-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .whatsapp-float {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface antialiased">
+<!-- TopNavBar (Shared Component) -->
+<nav class="bg-[#003580] dark:bg-slate-950 text-white font-['Plus_Jakarta_Sans'] text-sm font-medium docked full-width top-0 z-50 shadow-lg shadow-blue-900/20">
+<div class="flex justify-between items-center w-full h-20 px-6 md:px-12 max-w-7xl mx-auto">
+<div class="text-2xl font-bold text-white tracking-tight">GK Immigration</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white border-b-2 border-[#FF5722] pb-1 hover:text-white transition-colors duration-200" href="/services">Services</a>
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="/visas">Visas</a>
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="/destinations">Destinations</a>
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="/about-us">About Us</a>
+<a class="text-blue-100/80 hover:text-white transition-colors duration-200" href="/contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:block text-blue-100/80 hover:text-white transition-colors">Sign In</button>
+<button class="bg-[#FF5722] text-white px-6 py-2.5 rounded-lg font-semibold shadow-md hover:bg-[#E64A19] transition-all">Track My Application</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-[600px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-angle wide shot of a modern airplane wing soaring above a thick blanket of clouds during a golden sunset. The lighting is warm and ethereal, casting long shadows and a rich amber glow across the sky. The visual style is premium and aspirational, utilizing a palette of deep blues and vibrant oranges to convey a sense of secure and luxury global travel. The mood is peaceful yet empowering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmUZ3uvS1qQtOW4tQwr5ENXHaYdXCYJvYCP3RcviB-sFoQldEL8Pd2K7UyQW4jlG4KAI9lkkLm6cGlqH-HLTOEqE3FFzGOcvZFMibzzFzn-0lg0qJEsDzDeYCR_o1WQC2Rke4-z675q0NHNix18O5xKuQ9bNZ_96AkE8_9vNZSzsYh8P_2lbqZRIIxWhfFUEG4C3FU4CFDwSqH3xq1AvAgupGxCAE0tVkFntRTIDJVRw16d-jrqv3SbctwrTZe-5F7iWSczrtLHXg"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-xxl w-full">
+<div class="max-w-2xl text-white">
+<h1 class="font-display-xl text-display-xl mb-md">Secure Your Journey with Travel Insurance</h1>
+<p class="font-body-lg text-body-lg text-blue-100/90 mb-xl">Affordable plans for domestic &amp; international travel. Don't let unforeseen medical or travel hiccups disrupt your peace of mind.</p>
+<div class="flex flex-wrap gap-md">
+<button class="bg-secondary-container text-white px-xl py-lg rounded-lg font-headline-sm shadow-xl hover:bg-secondary transition-all">Get Free Quote</button>
+<button class="bg-[#25D366] text-white px-xl py-lg rounded-lg font-headline-sm shadow-xl hover:bg-[#128C7E] transition-all flex items-center gap-2">
+<span class="material-symbols-outlined">chat</span> Chat on WhatsApp
+                    </button>
+</div>
+<div class="mt-xl flex items-center gap-lg">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-200"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-300"></div>
+<div class="w-10 h-10 rounded-full border-2 border-white bg-slate-400"></div>
+</div>
+<span class="font-label-md text-label-md text-white/80">Trusted by 10,000+ Travelers Worldwide</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Travel Insurance -->
+<section class="py-xxl bg-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-sm">Why Travel Insurance?</h2>
+<div class="w-20 h-1 bg-secondary-container mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
+<div class="p-xl bg-surface rounded-xl border border-outline-variant hover:shadow-lg transition-all text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-primary-container text-3xl">medical_services</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-sm text-primary">Medical Emergencies</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Comprehensive coverage for hospitalization and medical costs abroad.</p>
+</div>
+<div class="p-xl bg-surface rounded-xl border border-outline-variant hover:shadow-lg transition-all text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-primary-container text-3xl">event_busy</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-sm text-primary">Trip Cancellations</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Reimbursement for non-refundable expenses if your trip is cut short.</p>
+</div>
+<div class="p-xl bg-surface rounded-xl border border-outline-variant hover:shadow-lg transition-all text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-primary-container text-3xl">luggage</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-sm text-primary">Lost Baggage</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Compensation for your belongings if they are lost, stolen, or damaged.</p>
+</div>
+<div class="p-xl bg-surface rounded-xl border border-outline-variant hover:shadow-lg transition-all text-center">
+<div class="w-16 h-16 bg-primary-container/10 rounded-full flex items-center justify-center mx-auto mb-md">
+<span class="material-symbols-outlined text-primary-container text-3xl">schedule</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm mb-sm text-primary">Flight Delays</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Stay covered for accommodation and meals during long transit delays.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Insurance Providers -->
+<section class="py-xl bg-surface-container-low border-y border-outline-variant">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<h3 class="font-label-md text-label-md text-center text-on-surface-variant mb-xl">PARTNERING WITH THE WORLD'S MOST TRUSTED PROVIDERS</h3>
+<div class="grid grid-cols-2 md:grid-cols-5 gap-xl items-center opacity-70 grayscale hover:grayscale-0 transition-all">
+<div class="flex justify-center">
+<div class="h-12 w-32 bg-slate-300 rounded flex items-center justify-center font-bold text-slate-600">TATA AIG</div>
+</div>
+<div class="flex justify-center">
+<div class="h-12 w-32 bg-slate-300 rounded flex items-center justify-center font-bold text-slate-600">ICICI LOMBARD</div>
+</div>
+<div class="flex justify-center">
+<div class="h-12 w-32 bg-slate-300 rounded flex items-center justify-center font-bold text-slate-600">HDFC ERGO</div>
+</div>
+<div class="flex justify-center">
+<div class="h-12 w-32 bg-slate-300 rounded flex items-center justify-center font-bold text-slate-600">BAJAJ ALLIANZ</div>
+</div>
+<div class="flex justify-center">
+<div class="h-12 w-32 bg-slate-300 rounded flex items-center justify-center font-bold text-slate-600">RELIANCE</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Insurance Plans Comparison -->
+<section class="py-xxl">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="mb-xl text-center">
+<h2 class="font-headline-lg text-headline-lg text-primary">Compare Our Top Plans</h2>
+<p class="text-on-surface-variant">Find the perfect balance of coverage and value</p>
+</div>
+<div class="overflow-x-auto shadow-xl rounded-xl border border-outline-variant">
+<table class="w-full text-left bg-white min-w-[800px]">
+<thead class="bg-primary text-white font-headline-sm">
+<tr>
+<th class="p-lg">Features</th>
+<th class="p-lg">Economy Plan</th>
+<th class="p-lg bg-secondary-container">Popular Choice</th>
+<th class="p-lg">Premium Gold</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface transition-colors">
+<td class="p-lg font-semibold text-primary">Medical Coverage</td>
+<td class="p-lg">$50,000</td>
+<td class="p-lg bg-secondary-container/5">$250,000</td>
+<td class="p-lg">$500,000+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="p-lg font-semibold text-primary">Trip Cancellation</td>
+<td class="p-lg">Up to $1,000</td>
+<td class="p-lg bg-secondary-container/5">Up to $5,000</td>
+<td class="p-lg">Full Trip Value</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="p-lg font-semibold text-primary">Baggage Loss</td>
+<td class="p-lg">$500</td>
+<td class="p-lg bg-secondary-container/5">$1,500</td>
+<td class="p-lg">$3,000</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="p-lg font-semibold text-primary">Dental Cover</td>
+<td class="p-lg">Emergency Only</td>
+<td class="p-lg bg-secondary-container/5">$500</td>
+<td class="p-lg">$1,000</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="p-lg font-semibold text-primary">Price Range</td>
+<td class="p-lg text-primary font-bold">Starts ₹499</td>
+<td class="p-lg bg-secondary-container/5 text-secondary font-bold">Starts ₹1,299</td>
+<td class="p-lg text-primary font-bold">Starts ₹2,499</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-xxl bg-primary-container text-white">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<h2 class="font-headline-lg text-headline-lg text-center mb-xl">Why Choose GK Immigration Insurance?</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-xl">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary-container text-4xl">payments</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">Cashless Treatment</h4>
+<p class="text-blue-100/70 text-body-sm">Over 10,000+ network hospitals globally for cashless claims.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary-container text-4xl">support_agent</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">24/7 Global Help</h4>
+<p class="text-blue-100/70 text-body-sm">Dedicated international helpdesk available at any time, anywhere.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary-container text-4xl">savings</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">Affordable Premium</h4>
+<p class="text-blue-100/70 text-body-sm">Maximum coverage with the lowest premiums in the industry.</p>
+</div>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-secondary-container text-4xl">coronavirus</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-xs">COVID-19 Protection</h4>
+<p class="text-blue-100/70 text-body-sm">Inclusive plans covering medical and quarantine expenses.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works (4-Step Flow) -->
+<section class="py-xxl bg-white overflow-hidden">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="text-center mb-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary">Get Insured in 4 Simple Steps</h2>
+</div>
+<div class="relative flex flex-col lg:flex-row justify-between gap-lg">
+<div class="absolute top-1/2 left-0 w-full h-0.5 bg-surface-variant -translate-y-1/2 hidden lg:block z-0"></div>
+<div class="relative z-10 flex flex-col items-center text-center bg-white lg:w-1/4">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-display-xl mb-md">1</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Fill Details</h4>
+<p class="text-body-sm text-on-surface-variant px-sm">Enter your destination and travel dates.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center bg-white lg:w-1/4">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-display-xl mb-md">2</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Get Options</h4>
+<p class="text-body-sm text-on-surface-variant px-sm">Compare best plans from top providers.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center bg-white lg:w-1/4">
+<div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white font-display-xl mb-md">3</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Choose &amp; Confirm</h4>
+<p class="text-body-sm text-on-surface-variant px-sm">Select the plan that fits your needs.</p>
+</div>
+<div class="relative z-10 flex flex-col items-center text-center bg-white lg:w-1/4">
+<div class="w-16 h-16 bg-secondary-container rounded-full flex items-center justify-center text-white font-display-xl mb-md">4</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Receive Policy</h4>
+<p class="text-body-sm text-on-surface-variant px-sm">Get your policy instantly via email.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Lead Capture Form -->
+<section class="py-xxl bg-surface">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="bg-white rounded-2xl shadow-2xl overflow-hidden flex flex-col lg:flex-row border border-outline-variant">
+<div class="lg:w-1/2 p-xl lg:p-xxl bg-primary-container text-white flex flex-col justify-center">
+<h2 class="font-display-xl text-display-xl mb-md">Ready to fly safe?</h2>
+<p class="font-body-lg text-body-lg text-blue-100 mb-xl">Fill out the form and our insurance experts will curate the best quotes for your specific journey.</p>
+<ul class="space-y-md">
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Instant Digital Copy
+                        </li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Visa Compliant Policies
+                        </li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Zero Paperwork
+                        </li>
+</ul>
+</div>
+<div class="lg:w-1/2 p-xl lg:p-xxl">
+<form class="space-y-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Full Name</label>
+<input class="w-full border-outline-variant rounded-lg focus:ring-primary focus:border-primary" placeholder="John Doe" type="text"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Phone Number</label>
+<input class="w-full border-outline-variant rounded-lg focus:ring-primary focus:border-primary" placeholder="+91 98765 43210" type="tel"/>
+</div>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Email Address</label>
+<input class="w-full border-outline-variant rounded-lg focus:ring-primary focus:border-primary" placeholder="john@example.com" type="email"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Travel Destination</label>
+<select class="w-full border-outline-variant rounded-lg focus:ring-primary focus:border-primary">
+<option>Select Country</option>
+<option>United States</option>
+<option>United Kingdom</option>
+<option>Canada</option>
+<option>Europe (Schengen)</option>
+<option>Australia</option>
+</select>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">Start Date</label>
+<input class="w-full border-outline-variant rounded-lg focus:ring-primary focus:border-primary" type="date"/>
+</div>
+<div class="space-y-xs">
+<label class="font-label-md text-on-surface">End Date</label>
+<input class="w-full border-outline-variant rounded-lg focus:ring-primary focus:border-primary" type="date"/>
+</div>
+</div>
+<button class="w-full bg-secondary-container text-white py-lg rounded-lg font-headline-sm hover:bg-secondary transition-all shadow-lg">Get Insurance Quote</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-xxl bg-white">
+<div class="max-w-4xl mx-auto px-6">
+<h2 class="font-headline-lg text-headline-lg text-primary text-center mb-xl">Frequently Asked Questions</h2>
+<div class="space-y-lg">
+<div class="border-b border-outline-variant pb-md">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm flex justify-between items-center cursor-pointer">
+                        Is travel insurance mandatory for my visa?
+                        <span class="material-symbols-outlined">expand_more</span>
+</h3>
+<p class="text-body-md text-on-surface-variant">Yes, for many destinations like Schengen countries, travel insurance with a minimum €30,000 coverage is mandatory for visa approval.</p>
+</div>
+<div class="border-b border-outline-variant pb-md">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm flex justify-between items-center cursor-pointer">
+                        What does the medical coverage include?
+                        <span class="material-symbols-outlined">expand_more</span>
+</h3>
+<p class="text-body-md text-on-surface-variant">It typically includes inpatient/outpatient treatment, emergency medical evacuation, and repatriation of remains.</p>
+</div>
+<div class="border-b border-outline-variant pb-md">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm flex justify-between items-center cursor-pointer">
+                        How much does a typical plan cost?
+                        <span class="material-symbols-outlined">expand_more</span>
+</h3>
+<p class="text-body-md text-on-surface-variant">Costs depend on age, duration, and destination. Basic plans start as low as ₹49 per day for certain domestic journeys.</p>
+</div>
+<div class="border-b border-outline-variant pb-md">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm flex justify-between items-center cursor-pointer">
+                        Can I buy insurance at the last minute?
+                        <span class="material-symbols-outlined">expand_more</span>
+</h3>
+<p class="text-body-md text-on-surface-variant">Absolutely! Our platform allows you to purchase insurance and receive your policy via email even minutes before you check in.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA Banner -->
+<section class="py-xxl">
+<div class="max-w-7xl mx-auto px-6 md:px-12">
+<div class="relative rounded-3xl overflow-hidden p-xl md:p-xxl text-center text-white">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A serene, high-resolution lifestyle photograph of a joyful traveler standing on a scenic overlook at dawn, looking out over a historic European city. The lighting is soft, cinematic, and warm, featuring a gentle morning sun breaking through the mist. The color palette is dominated by elegant blues and soft whites with a touch of dawn's orange. The atmosphere is one of absolute security and freedom, perfectly encapsulating the peace of mind that comes with reliable travel protection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsdqU24Y3vm4B450Q04d4Rech3YxUVb30NFocpmgiQviX9YayeKjOcSBI-WLqfBjokbWTDJzU2ZySk96r1O_cG0FHuJxpHYmGao-Qr_orYboqxSSTg4764QECxRLFu6XzUR0Y6ilF2ToHey0A2Kf5XmEcbXGM-ayDC_9L3R0VbMuCHvnoGvGPRbTSxAWyDSepHifwOt4QJPcodgy862p1FLmNcAuTA-5JwLvaNknqqUIVOc8jThZ55hFNZqjPrMGsh_2s72gPiWBg"/>
+<div class="absolute inset-0 bg-primary/80"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<h2 class="font-display-xl text-display-xl mb-md">Don't Leave Safety to Chance</h2>
+<p class="font-body-lg text-body-lg mb-xl text-blue-100/90">Join thousands of travelers who trust GK Immigration for their safety abroad.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-md">
+<button class="bg-secondary-container text-white px-xl py-lg rounded-lg font-headline-sm hover:scale-105 transition-all">Get Quick Quote</button>
+<button class="bg-[#25D366] text-white px-xl py-lg rounded-lg font-headline-sm hover:scale-105 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">chat</span> WhatsApp Expert
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer (Shared Component) -->
+<footer class="bg-slate-50 dark:bg-slate-900 w-full border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto py-12 px-8 flex flex-col md:flex-row justify-between gap-8 font-['Plus_Jakarta_Sans'] text-sm leading-relaxed">
+<div class="max-w-sm">
+<div class="text-xl font-black text-[#003580] dark:text-white mb-md">GK Immigration</div>
+<p class="text-slate-500 dark:text-slate-400 mb-sm">Your Trusted Global Travel Partner. Providing seamless immigration and travel services for over a decade.</p>
+<p class="text-slate-500 dark:text-slate-400 mb-lg flex items-start gap-2 italic">
+<span class="material-symbols-outlined text-sm">location_on</span>
+GK Immigration, Near SBI Bank, New Bus Stand, Bhawanigarh
+</p>
+<div class="flex gap-md">
+<span class="material-symbols-outlined text-[#003580] cursor-pointer hover:opacity-80">social_leaderboard</span>
+<span class="material-symbols-outlined text-[#003580] cursor-pointer hover:opacity-80">public</span>
+<span class="material-symbols-outlined text-[#003580] cursor-pointer hover:opacity-80">alternate_email</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-xl md:gap-xxl">
+<div class="flex flex-col gap-sm">
+<h5 class="text-[#003580] dark:text-blue-400 font-semibold">Quick Links</h5>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="/privacy">Privacy Policy</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="/terms">Terms of Service</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="/cookies">Cookie Policy</a>
+</div>
+<div class="flex flex-col gap-sm">
+<h5 class="text-[#003580] dark:text-blue-400 font-semibold">Company</h5>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="/sitemap">Sitemap</a>
+<a class="text-slate-500 dark:text-slate-400 hover:text-[#003580] dark:hover:text-white transition-colors" href="/partner-login">Partner Login</a>
+<a class="text-[#FF5722] font-semibold hover:underline" href="/careers">Career</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 py-lg border-t border-slate-200 dark:border-slate-800 text-center text-slate-500">
+© 2024 GK Immigration. Your Trusted Global Travel Partner.
+</div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a class="whatsapp-float bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center" href="#">
+<svg class="w-8 h-8" fill="currentColor" viewbox="0 0 24 24">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.319 1.592 5.548 0 10.061-4.512 10.063-10.062 0-2.69-1.048-5.219-2.953-7.124s-4.434-2.952-7.124-2.952c-5.549 0-10.062 4.512-10.065 10.061-.001 2.107.561 3.734 1.554 5.397l-.995 3.635 3.72-.976z"></path>
+</svg>
+</a>
+</body></html>
