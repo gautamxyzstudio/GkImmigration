@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { CONTACT_ENDPOINT } from '../utils/constants.js';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../utils/constants.js';
 import { hasErrors } from '../utils/validation.js';
 
-export function useFormSubmission({ initialValues, validate, endpoint = CONTACT_ENDPOINT, formType }) {
+export function useFormSubmission({ initialValues, validate, formType }) {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
   const [status, setStatus] = useState('idle');
@@ -14,9 +15,10 @@ export function useFormSubmission({ initialValues, validate, endpoint = CONTACT_
     setErrors((current) => ({ ...current, [name]: undefined }));
   }
 
-  async function submitForm(event) {
+  async function submitForm(event, overrideValues = {}) {
     event.preventDefault();
-    const nextErrors = validate(values);
+    const finalValues = { ...values, ...overrideValues };
+    const nextErrors = validate(finalValues);
     setErrors(nextErrors);
     setStatusMessage('');
 
@@ -28,21 +30,31 @@ export function useFormSubmission({ initialValues, validate, endpoint = CONTACT_
     setStatus('loading');
 
     try {
-      // TODO(project-owner): Connect /api/contact to a real backend, Formspree, or EmailJS account.
-      const response = await fetch(endpoint, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, formType }),
-      });
+      const templateParams = {
+        name: finalValues.name || '',
+        phone: finalValues.phone || '',
+        email: finalValues.email || '',
+        service: finalValues.service || '',
+        message: finalValues.message || '',
+        formType: formType || 'General Inquiry',
+        form_type: formType || 'General Inquiry',
+        from_name: finalValues.name || '',
+        from_email: finalValues.email || '',
+        reply_to: finalValues.email || '',
+      };
 
-      if (!response.ok) {
-        throw new Error('The request could not be completed.');
-      }
+      await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey
+      );
 
       setStatus('success');
-      setStatusMessage('Thank you. Our team will contact you shortly.');
+      setStatusMessage('Thank you! Your inquiry has been sent successfully. Our team will contact you shortly.');
       setValues(initialValues);
-    } catch {
+    } catch (error) {
+      console.error('EmailJS Form Submission Error:', error);
       setStatus('error');
       setStatusMessage('We could not send your request right now. Please call or WhatsApp us for immediate help.');
     }

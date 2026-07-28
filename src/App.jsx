@@ -6,6 +6,7 @@ const HomePage = lazy(() => import('./pages/HomePage.jsx').then((module) => ({ d
 const ServicesPage = lazy(() => import('./pages/ServicesPage.jsx').then((module) => ({ default: module.ServicesPage })));
 const VisaPage = lazy(() => import('./pages/VisaPage.jsx').then((module) => ({ default: module.VisaPage })));
 const DestinationsPage = lazy(() => import('./pages/DestinationsPage.jsx').then((module) => ({ default: module.DestinationsPage })));
+const GalleryPage = lazy(() => import('./pages/GalleryPage.jsx').then((module) => ({ default: module.GalleryPage })));
 const InsurancePage = lazy(() => import('./pages/InsurancePage.jsx').then((module) => ({ default: module.InsurancePage })));
 const ContactPage = lazy(() => import('./pages/ContactPage.jsx').then((module) => ({ default: module.ContactPage })));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage.jsx').then((module) => ({ default: module.NotFoundPage })));
@@ -28,6 +29,8 @@ export function App() {
           <Route path="visa-services" element={<Navigate to="/visas" replace />} />
           <Route path="destinations" element={<DestinationsPage />} />
           <Route path="tour-packages" element={<Navigate to="/destinations" replace />} />
+          <Route path="gallery" element={<GalleryPage />} />
+          <Route path="our-gallery" element={<Navigate to="/gallery" replace />} />
           <Route path="insurance" element={<InsurancePage />} />
           <Route path="travel-insurance" element={<Navigate to="/insurance" replace />} />
           <Route path="contact" element={<ContactPage />} />

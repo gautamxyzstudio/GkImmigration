@@ -7,12 +7,13 @@ export function Footer() {
     <footer className="border-t border-outline-variant bg-slate-50 pb-24 font-body text-sm md:pb-0">
       <div className="container-shell grid gap-10 py-12 md:grid-cols-[1.25fr_1fr_1fr_1fr]">
         <section aria-labelledby="footer-brand">
-          <h2
-            id="footer-brand"
-            className="font-heading text-xl font-black text-primary-container"
-          >
-            GK Immigration
-          </h2>
+          <Link to="/" id="footer-brand" className="inline-block rounded-xl bg-primary-container p-2.5 shadow-md">
+            <img
+              src="/logo.png"
+              alt="GK Immigration Logo"
+              className="h-10 w-auto object-contain"
+            />
+          </Link>
           <p className="mt-4 max-w-sm text-on-surface-variant">
             Premium immigration and travel services for visas, holidays,
             insurance, and global journey planning.

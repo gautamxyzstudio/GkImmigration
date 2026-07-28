@@ -12,6 +12,13 @@ const serviceCards = [
   { icon: ShieldCheck, title: 'Travel Insurance', body: 'Plan selection for medical, cancellation, delay, and baggage coverage.' },
 ];
 
+const servicesHeroImages = [
+  { src: HERO_IMAGES.services, alt: 'Commercial airplane parked at an airport terminal during boarding' },
+  { src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=2200', alt: 'Document review and application assistance' },
+  { src: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=2200', alt: 'Client guidance and consultation session' },
+  { src: 'https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&q=80&w=2200', alt: 'International holiday destination packages' },
+];
+
 export function ServicesPage() {
   return (
     <>
@@ -21,8 +28,7 @@ export function ServicesPage() {
         title="Travel and immigration services under one roof"
         eyebrow="Our Services"
         description="Choose expert assistance for visa applications, air tickets, guided tours, and travel insurance with a single responsive team."
-        image={HERO_IMAGES.services}
-        imageAlt="Commercial airplane parked at an airport terminal during boarding"
+        images={servicesHeroImages}
       />
       <section className="section-y">
         <div className="container-shell grid gap-6 md:grid-cols-2 lg:grid-cols-4">
