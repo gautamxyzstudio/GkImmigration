@@ -9,6 +9,7 @@ const baseValues = {
   phone: "",
   email: "",
   service: "",
+  visaType: "",
   message: "",
 };
 
@@ -18,6 +19,28 @@ export function InquiryForm({
   defaultService = "",
   formType = "general",
 }) {
+  const getInitialValues = () => {
+    if (formType === "visa") {
+      return { ...baseValues, service: defaultService || visaTypes[0] };
+    }
+    const isVisa =
+      defaultService === "Visa Services" ||
+      visaTypes.some((vt) => defaultService.includes(vt)) ||
+      defaultService.includes("Visa");
+
+    if (isVisa) {
+      const matchedVisaType =
+        visaTypes.find((vt) => defaultService.includes(vt)) || "";
+      return {
+        ...baseValues,
+        service: "Visa Services",
+        visaType: matchedVisaType,
+      };
+    }
+
+    return { ...baseValues, service: defaultService };
+  };
+
   const {
     values,
     errors,
@@ -27,11 +50,14 @@ export function InquiryForm({
     updateField,
     submitForm,
   } = useFormSubmission({
-    initialValues: { ...baseValues, service: defaultService },
+    initialValues: getInitialValues(),
     validate: validateInquiry,
     formType,
   });
+
   const options = formType === "visa" ? visaTypes : serviceTypes;
+  const showVisaTypeSelect =
+    formType !== "visa" && values.service === "Visa Services";
 
   return (
     <form
@@ -62,10 +88,12 @@ export function InquiryForm({
           error={errors.phone}
           onChange={updateField}
           required
+          maxLength={10}
+          placeholder="10-digit mobile number"
           formType={formType}
         />
       </div>
-      <div className="grid gap-5 md:grid-cols-2">
+      <div className={`grid gap-5 ${showVisaTypeSelect ? "md:grid-cols-3" : "md:grid-cols-2"}`}>
         <FormField
           label="Email Address"
           name="email"
@@ -101,6 +129,35 @@ export function InquiryForm({
             <p className="mt-2 text-body-sm text-error">{errors.service}</p>
           ) : null}
         </div>
+
+        {showVisaTypeSelect ? (
+          <div className="animate-fade-in">
+            <label
+              className={`mb-2 block font-body text-label-md ${formType === "visa" ? "text-white" : "text-primary"}`}
+              htmlFor={`${formType}-visaType`}
+            >
+              Visa Type <span className="text-secondary-container">*</span>
+            </label>
+            <select
+              id={`${formType}-visaType`}
+              name="visaType"
+              value={values.visaType || ""}
+              onChange={updateField}
+              className="h-12 w-full rounded-lg border border-outline-variant bg-white px-4 text-on-surface transition focus:border-primary focus:ring-2 focus:ring-primary/10"
+              required
+            >
+              <option value="">Select visa type</option>
+              {visaTypes.map((type) => (
+                <option key={type} value={type}>
+                  {type}
+                </option>
+              ))}
+            </select>
+            {errors.visaType ? (
+              <p className="mt-2 text-body-sm text-error">{errors.visaType}</p>
+            ) : null}
+          </div>
+        ) : null}
       </div>
       <div>
         <label
@@ -150,6 +207,8 @@ function FormField({
   onChange,
   required = false,
   formType,
+  maxLength,
+  placeholder,
 }) {
   return (
     <div>
@@ -167,6 +226,9 @@ function FormField({
         value={value}
         onChange={onChange}
         required={required}
+        maxLength={maxLength}
+        placeholder={placeholder}
+        inputMode={type === "tel" ? "numeric" : undefined}
         className="h-12 w-full rounded-lg border border-outline-variant px-4 text-on-surface transition focus:border-primary focus:ring-2 focus:ring-primary/10"
       />
       {error ? <p className="mt-2 text-body-sm text-error">{error}</p> : null}
@@ -190,4 +252,6 @@ FormField.propTypes = {
   onChange: PropTypes.func.isRequired,
   required: PropTypes.bool,
   formType: PropTypes.string,
+  maxLength: PropTypes.number,
+  placeholder: PropTypes.string,
 };

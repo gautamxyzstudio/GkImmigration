@@ -21,143 +21,98 @@ import { OFFICE } from "../utils/constants.js";
 const GALLERY_ITEMS = [
   {
     id: 1,
-    title: "Dilteg Singh - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "July 2026",
     image: "/gallery/DiltegSingh.webp",
     alt: "Dilteg Singh holding approved visa document",
-    description:
-      "Congratulations to Dilteg Singh on securing visa approval through GK Immigration.",
   },
   {
     id: 2,
-    title: "Gurmej Singh - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "July 2026",
     image: "/gallery/GurmejSingh.webp",
     alt: "Gurmej Singh holding approved visa document",
-    description:
-      "Congratulations to Gurmej Singh on receiving visa grant with complete assistance.",
   },
   {
     id: 3,
-    title: "Gurpiar - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "June 2026",
     image: "/gallery/Gurpiar.webp",
     alt: "Gurpiar holding approved visa document",
-    description:
-      "Successful visa filing and approval for Gurpiar from GK Immigration team.",
   },
   {
     id: 4,
-    title: "Gurpreet - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "June 2026",
     image: "/gallery/Gurpreet.webp",
     alt: "Gurpreet holding approved visa document",
-    description:
-      "Happy moment with Gurpreet celebrating fast-track visa processing success.",
   },
   {
     id: 5,
-    title: "Harminder - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "May 2026",
     image: "/gallery/Harminder.webp",
     alt: "Harminder holding approved visa document",
-    description:
-      "Warm congratulations to Harminder on receiving official visa approval.",
   },
   {
     id: 6,
-    title: "Kulwant Kaur - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "May 2026",
     image: "/gallery/KulwantKaur.webp",
     alt: "Kulwant Kaur holding approved visa document",
-    description:
-      "Successful visitor visa grant for Kulwant Kaur processed smoothly.",
   },
   {
     id: 7,
-    title: "Manjit & Amarjit - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "April 2026",
     image: "/gallery/ManjitAmarjit.webp",
     alt: "Manjit and Amarjit holding approved visa documents",
-    description:
-      "Delighted family Manjit & Amarjit celebrating their joint visa approvals.",
   },
   {
     id: 8,
-    title: "Mohit - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "April 2026",
     image: "/gallery/Mohit.webp",
     alt: "Mohit holding approved visa document",
-    description:
-      "Congratulations to Mohit on securing approved visa through GK Immigration.",
   },
   {
     id: 9,
-    title: "Raj Rani - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "March 2026",
     image: "/gallery/RajRani.webp",
     alt: "Raj Rani holding approved visa document",
-    description:
-      "Smooth document filing and visa approval success for Raj Rani.",
   },
   {
     id: 10,
-    title: "Rajinder Brar - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "March 2026",
     image: "/gallery/RajinderBrar.webp",
     alt: "Rajinder Brar holding approved visa document",
-    description:
-      "Congratulations to Rajinder Brar on receiving visa approval letter.",
   },
   {
     id: 11,
-    title: "Rajinder Kaur - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "February 2026",
     image: "/gallery/RajinderKaur.webp",
     alt: "Rajinder Kaur holding approved visa document",
-    description:
-      "Successful visa grant for Rajinder Kaur with dedicated counselor guidance.",
   },
   {
     id: 12,
-    title: "Raman Deep - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "February 2026",
     image: "/gallery/RamanDeep.webp",
     alt: "Raman Deep holding approved visa document",
-    description:
-      "Celebrating Raman Deep on fast visa clearance through GK Immigration.",
   },
   {
     id: 13,
-    title: "Rehmat Kaur - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "January 2026",
     image: "/gallery/RehmatKaur.webp",
     alt: "Rehmat Kaur holding approved visa document",
-    description:
-      "Best wishes to Rehmat Kaur on receiving official visa approval.",
   },
   {
     id: 14,
-    title: "Surender Kaur - Visa Approval Success",
-    location: "Bhawanigarh, Punjab",
-    date: "January 2026",
     image: "/gallery/SurenderKaur.webp",
     alt: "Surender Kaur holding approved visa document",
-    description:
-      "Successful visa approval for Surender Kaur processed with 100% accuracy.",
+  },
+  {
+    id: 15,
+    image: "/gallery/BaljinderSingh.webp",
+    alt: "Baljinder Singh holding approved visa document",
+  },
+  {
+    id: 16,
+    image: "/gallery/FlopYoutuber.webp",
+    alt: "Flop Youtuber holding approved visa document",
+  },
+  {
+    id: 17,
+    image: "/gallery/JaswinderKaur.webp",
+    alt: "Jaswinder Kaur holding approved visa document",
+  },
+  {
+    id: 18,
+    image: "/gallery/MalkitKaur.webp",
+    alt: "Malkit Kaur holding approved visa document",
+  },
+  {
+    id: 19,
+    image: "/gallery/SukhwinderKaur.webp",
+    alt: "Sukhwinder Kaur holding approved visa document",
   },
 ];
 

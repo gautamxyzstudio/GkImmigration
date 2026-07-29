@@ -19,7 +19,7 @@ export function Header() {
           <img
             src="/logo.png"
             alt="GK Immigration Logo"
-            className="h-12 w-auto object-contain"
+            className="md:h-12 md:w-[200px] w-[180px] object-contain"
           />
         </Link>
         <div className="hidden items-center gap-8 font-heading text-sm font-medium md:flex">

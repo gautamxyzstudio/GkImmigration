@@ -1,5 +1,5 @@
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const phonePattern = /^[+()\-\s\d]{8,18}$/;
+const phonePattern = /^\d{10}$/;
 
 export function validateInquiry(values) {
   const errors = {};
@@ -13,7 +13,7 @@ export function validateInquiry(values) {
   if (!values.phone?.trim()) {
     errors.phone = 'Enter your phone number.';
   } else if (!phonePattern.test(values.phone.trim())) {
-    errors.phone = 'Enter a valid phone number.';
+    errors.phone = 'Enter a valid 10-digit phone number.';
   }
 
   if (values.email && !emailPattern.test(values.email.trim())) {
@@ -22,6 +22,10 @@ export function validateInquiry(values) {
 
   if (!values.service?.trim()) {
     errors.service = 'Choose a service.';
+  }
+
+  if (values.service === 'Visa Services' && !values.visaType?.trim()) {
+    errors.visaType = 'Select the type of visa you need.';
   }
 
   if (values.message && values.message.trim().length > 500) {

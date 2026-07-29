@@ -18,20 +18,20 @@ import { Seo } from "../components/Seo.jsx";
 
 const HOME_HERO_IMAGES = [
   {
-    src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&q=80&w=2200",
-    alt: "Global landmarks and ocean view for premium travel services",
+    src: "/Tourist-Visa.webp",
+    alt: "Tourist Visa",
   },
   {
-    src: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&q=80&w=2200",
-    alt: "World map, passport and travel accessories",
+    src: "/Business-Visa.webp",
+    alt: "Business Visa",
   },
   {
-    src: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&q=80&w=2200",
-    alt: "Commercial aircraft taking off at golden sunset",
+    src: "/Study-Visa.webp",
+    alt: "Study Visa",
   },
   {
-    src: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&q=80&w=2200",
-    alt: "Eiffel Tower Paris icon for international travel",
+    src: "/Visitor-Visa.webp",
+    alt: "Visitor Visa",
   },
 ];
 
@@ -269,6 +269,8 @@ export function HomePage() {
               key={img.src}
               src={img.src}
               alt={img.alt}
+              width={1920}
+              height={1080}
               className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ease-in-out ${
                 index === currentSlide
                   ? "opacity-100 scale-105"
@@ -580,7 +582,7 @@ function InstagramReelsSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent" />
               </div>
-              <div className="absolute inset-0 hidden bg-white text-black lg:block">
+              <div className="absolute inset-0 bg-white text-black block">
                 <InstagramEmbed
                   url={reel.url}
                   width="100%"

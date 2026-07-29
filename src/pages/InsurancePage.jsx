@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import {
+  ArrowRight,
   BadgeDollarSign,
   BriefcaseMedical,
   CalendarX2,
@@ -19,6 +20,7 @@ import { useFormSubmission } from "../hooks/useFormSubmission.js";
 import { useModal } from "../context/ModalContext.jsx";
 import { HERO_IMAGES, OFFICE } from "../utils/constants.js";
 import { validateInquiry } from "../utils/validation.js";
+import { Link } from "react-router-dom";
 
 const SLIDER_IMAGES = [
   {
@@ -117,6 +119,29 @@ const faqs = [
     "Can I buy insurance at the last minute?",
     "Absolutely. You can purchase insurance and receive your policy via email even minutes before check in.",
   ],
+];
+
+const homeGalleryItems = [
+  {
+    title: "Dilteg Singh",
+    subtitle: "Visa Approval Success",
+    image: "/gallery/DiltegSingh.webp",
+  },
+  {
+    title: "Manjit & Amarjit",
+    subtitle: "Family Visa Granted",
+    image: "/gallery/ManjitAmarjit.webp",
+  },
+  {
+    title: "Gurpreet Singh",
+    subtitle: "Study Visa Approved",
+    image: "/gallery/Gurpreet.webp",
+  },
+  {
+    title: "Kulwant Kaur",
+    subtitle: "Visitor Visa Success",
+    image: "/gallery/KulwantKaur.webp",
+  },
 ];
 
 export function InsurancePage() {
@@ -335,6 +360,60 @@ export function InsurancePage() {
                     <p className="text-body-sm text-blue-100/80">{body}</p>
                   </div>
                 </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-background py-16 lg:py-24">
+        <div className="container-shell">
+          <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+            <div>
+              <h2 className="font-heading text-headline-lg text-primary">
+                Our Success Gallery
+              </h2>
+              <p className="mt-2 text-on-surface-variant">
+                Real visa approvals and moments of trust from our clients at GK
+                Immigration.
+              </p>
+            </div>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 font-heading font-bold text-primary transition-colors hover:text-secondary-container"
+            >
+              View Full Gallery
+              <ArrowRight size={18} />
+            </Link>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {homeGalleryItems.map((item) => (
+              <Reveal key={item.title}>
+                <Link
+                  to="/gallery"
+                  className="group relative block overflow-hidden rounded-2xl border border-outline-variant bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:shadow-blue-900/10"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <span className="absolute left-3 top-3 rounded-full bg-primary-container/90 px-3 py-1 text-[11px] font-semibold text-white backdrop-blur-sm">
+                      Visa Approval
+                    </span>
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-heading text-title-md font-bold text-primary transition-colors group-hover:text-secondary-container">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-body-sm text-on-surface-variant">
+                      {item.subtitle}
+                    </p>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>

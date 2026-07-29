@@ -47,12 +47,11 @@ export const visaTypes = [
   "Tourist Visa",
   "Visitor Visa",
   "Study Visa",
-  "SOWP",
+  "Spouse Visa",
   "Business Visa",
 ];
 export const serviceTypes = [
   "Visa Services",
   "Air Tickets",
-  "Tour Packages",
   "Travel Insurance",
 ];

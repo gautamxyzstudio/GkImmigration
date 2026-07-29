@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-export function Reveal({ as: Tag = 'div', className = '', delay = 0, children }) {
+export function Reveal({
+  as: Tag = "div",
+  className = "",
+  delay = 0,
+  children,
+}) {
   return (
-    <Tag className={`reveal-up ${className}`} style={{ '--reveal-delay': `${delay}ms` }}>
+    <Tag
+      className={`reveal-up h-auto ${className}`}
+      style={{ "--reveal-delay": `${delay}ms` }}
+    >
       {children}
     </Tag>
   );

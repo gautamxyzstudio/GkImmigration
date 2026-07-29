@@ -11,8 +11,24 @@ export function useFormSubmission({ initialValues, validate, formType }) {
 
   function updateField(event) {
     const { name, value } = event.target;
-    setValues((current) => ({ ...current, [name]: value }));
-    setErrors((current) => ({ ...current, [name]: undefined }));
+    let nextValue = value;
+    if (name === 'phone') {
+      nextValue = value.replace(/\D/g, '').slice(0, 10);
+    }
+    setValues((current) => {
+      const next = { ...current, [name]: nextValue };
+      if (name === 'service' && value !== 'Visa Services') {
+        next.visaType = '';
+      }
+      return next;
+    });
+    setErrors((current) => {
+      const next = { ...current, [name]: undefined };
+      if (name === 'service' && value !== 'Visa Services') {
+        next.visaType = undefined;
+      }
+      return next;
+    });
   }
 
   async function submitForm(event, overrideValues = {}) {
@@ -30,11 +46,17 @@ export function useFormSubmission({ initialValues, validate, formType }) {
     setStatus('loading');
 
     try {
+      const serviceDetail =
+        finalValues.service === 'Visa Services' && finalValues.visaType
+          ? `Visa Services (${finalValues.visaType})`
+          : finalValues.service || '';
+
       const templateParams = {
         name: finalValues.name || '',
         phone: finalValues.phone || '',
         email: finalValues.email || '',
-        service: finalValues.service || '',
+        service: serviceDetail,
+        visa_type: finalValues.visaType || '',
         message: finalValues.message || '',
         formType: formType || 'General Inquiry',
         form_type: formType || 'General Inquiry',

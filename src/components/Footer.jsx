@@ -7,7 +7,11 @@ export function Footer() {
     <footer className="border-t border-outline-variant bg-slate-50 pb-24 font-body text-sm md:pb-0">
       <div className="container-shell grid gap-10 py-12 md:grid-cols-[1.25fr_1fr_1fr_1fr]">
         <section aria-labelledby="footer-brand">
-          <Link to="/" id="footer-brand" className="inline-block rounded-xl bg-primary-container p-2.5 shadow-md">
+          <Link
+            to="/"
+            id="footer-brand"
+            className="inline-block rounded-xl bg-primary-container p-2.5 shadow-md"
+          >
             <img
               src="/logo.png"
               alt="GK Immigration Logo"
@@ -119,7 +123,22 @@ export function Footer() {
         </section>
       </div>
       <div className="border-t border-outline-variant py-4 text-center text-body-sm text-outline">
-        © 2026 GK Immigration. Your Trusted Global Travel Partner.
+        <div className="container-shell flex flex-row justify-between items-center">
+          <span>
+            {" "}
+            © {new Date().getFullYear()} GK Immigration. Your Trusted Global
+            Travel Partner.
+          </span>
+          <Link
+            to="https://www.xyz.studio/"
+            className="hover:text-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Design & Develop by{" "}
+            <strong className="text-primary font-heading">XYZ Studio</strong>
+          </Link>
+        </div>
       </div>
     </footer>
   );
