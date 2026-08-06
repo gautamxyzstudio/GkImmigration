@@ -39,7 +39,7 @@ export function ContactModal({ isOpen, onClose, defaultService = "" }) {
         </button>
 
         <InquiryForm
-          title="Get in Touch with GK Immigration"
+          title="Get in Touch with GK Immigrations"
           defaultService={defaultService}
           formType="modal"
         />

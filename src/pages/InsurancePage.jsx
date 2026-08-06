@@ -158,7 +158,7 @@ export function InsurancePage() {
   return (
     <>
       <Seo
-        title="Travel Insurance | GK Immigration"
+        title="Travel Insurance | GK Immigrations"
         description="Compare travel insurance coverage for domestic and international journeys."
       />
 
@@ -341,7 +341,7 @@ export function InsurancePage() {
         <div className="container-shell">
           <Reveal className="mb-10 text-center">
             <h2 className="font-heading text-headline-lg">
-              Why Choose GK Immigration Insurance?
+              Why Choose GK Immigrations Insurance?
             </h2>
           </Reveal>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -375,7 +375,7 @@ export function InsurancePage() {
               </h2>
               <p className="mt-2 text-on-surface-variant">
                 Real visa approvals and moments of trust from our clients at GK
-                Immigration.
+                Immigrations.
               </p>
             </div>
             <Link
@@ -538,8 +538,8 @@ export function InsurancePage() {
                   Do Not Leave Safety to Chance
                 </h2>
                 <p className="mt-4 text-body-lg text-blue-100/90">
-                  Join thousands of travelers who trust GK Immigration for their
-                  safety abroad.
+                  Join thousands of travelers who trust GK Immigrations for
+                  their safety abroad.
                 </p>
                 <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
                   <button

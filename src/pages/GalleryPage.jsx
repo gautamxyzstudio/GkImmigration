@@ -126,11 +126,11 @@ const STATS = [
 const galleryHeroImages = [
   {
     src: "/gallery/DiltegSingh.webp",
-    alt: "GK Immigration client visa approval success story",
+    alt: "GK Immigrations client visa approval success story",
   },
   {
     src: "/gallery/ManjitAmarjit.webp",
-    alt: "Family visa approval success at GK Immigration",
+    alt: "Family visa approval success at GK Immigrations",
   },
   {
     src: "/gallery/Gurpreet.webp",
@@ -177,15 +177,15 @@ export function GalleryPage() {
   return (
     <>
       <Seo
-        title="Visa Approval Gallery | GK Immigration"
-        description="View real visa approval photos and success stories of happy clients at GK Immigration Bhawanigarh."
+        title="Visa Approval Gallery | GK Immigrations"
+        description="View real visa approval photos and success stories of happy clients at GK Immigrations Bhawanigarh."
       />
 
       <HeroSection
         compact
         title="Moments of Trust, Travel & Success"
         eyebrow="Our Gallery"
-        description="A visual look into our client visa approvals, travel journeys, and success stories at GK Immigration."
+        description="A visual look into our client visa approvals, travel journeys, and success stories at GK Immigrations."
         images={galleryHeroImages}
       />
 

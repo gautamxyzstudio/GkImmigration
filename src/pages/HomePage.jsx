@@ -92,14 +92,14 @@ const homeGalleryItems = [
 const testimonials = [
   {
     quote:
-      "GK Immigration made our Dubai trip absolutely effortless. From the visa process to the final airport drop-off, everything was perfectly organized.",
+      "GK Immigrations made our Dubai trip absolutely effortless. From the visa process to the final airport drop-off, everything was perfectly organized.",
     name: "Rahul Mehra",
     trip: "Travelled to Dubai",
     color: "bg-blue-100 text-blue-900",
   },
   {
     quote:
-      "I was worried about my UK visa, but GK Immigration handled the paperwork so professionally. I got my approval within 10 days.",
+      "I was worried about my UK visa, but GK Immigrations handled the paperwork so professionally. I got my approval within 10 days.",
     name: "Anita Sharma",
     trip: "Travelled to London",
     color: "bg-emerald-100 text-emerald-900",
@@ -113,7 +113,7 @@ const testimonials = [
   },
   {
     quote:
-      "Filed SOWP (Spouse Open Work Permit) through GK Immigration. Excellent counseling, clear document guidance, and successful result!",
+      "Filed SOWP (Spouse Open Work Permit) through GK Immigrations. Excellent counseling, clear document guidance, and successful result!",
     name: "Manpreet Kaur",
     trip: "Spouse Visa - Vancouver",
     color: "bg-purple-100 text-purple-900",
@@ -127,7 +127,7 @@ const testimonials = [
   },
   {
     quote:
-      "Booked our Thailand honeymoon tour package through GK Immigration. Incredible hotel selections, hassle-free transfers, and great support!",
+      "Booked our Thailand honeymoon tour package through GK Immigrations. Incredible hotel selections, hassle-free transfers, and great support!",
     name: "Simran & Harpreet",
     trip: "Honeymoon Tour - Phuket",
     color: "bg-pink-100 text-pink-900",
@@ -155,7 +155,7 @@ const testimonials = [
   },
   {
     quote:
-      "Best flight fare rates and instant travel insurance policy issuance. Whenever I travel internationally, GK Immigration is my go-to choice.",
+      "Best flight fare rates and instant travel insurance policy issuance. Whenever I travel internationally, GK Immigrations is my go-to choice.",
     name: "Priya Patel",
     trip: "Air Tickets & Insurance",
     color: "bg-sky-100 text-sky-900",
@@ -169,7 +169,7 @@ const testimonials = [
   },
   {
     quote:
-      "New Zealand visitor visa approved without any stress. Thanks to GK Immigration for their expert file preparation and guidance.",
+      "New Zealand visitor visa approved without any stress. Thanks to GK Immigrations for their expert file preparation and guidance.",
     name: "Kuldeep Singh",
     trip: "Travelled to Auckland",
     color: "bg-lime-100 text-lime-900",
@@ -257,8 +257,8 @@ export function HomePage() {
   return (
     <>
       <Seo
-        title="GK Immigration | Premium Visa and Travel Services"
-        description="Plan visas, tours, tickets, and travel insurance with GK Immigration in Bhawanigarh."
+        title="GK Immigrations | Premium Visa and Travel Services"
+        description="Plan visas, tours, tickets, and travel insurance with GK Immigrations in Bhawanigarh."
       />
 
       <section className="relative flex min-h-[600px] items-center overflow-hidden">
@@ -389,7 +389,7 @@ export function HomePage() {
               </h2>
               <p className="mt-2 text-on-surface-variant">
                 Real visa approvals and moments of trust from our clients at GK
-                Immigration.
+                Immigrations.
               </p>
             </div>
             <Link

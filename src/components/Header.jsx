@@ -1,5 +1,4 @@
 import { Link, NavLink } from "react-router-dom";
-import { Menu } from "lucide-react";
 import { NAV_ITEMS } from "../utils/constants.js";
 import { useModal } from "../context/ModalContext.jsx";
 
@@ -18,7 +17,7 @@ export function Header() {
         >
           <img
             src="/logo.png"
-            alt="GK Immigration Logo"
+            alt="GK Immigrations Logo"
             className="md:h-12 md:w-[200px] w-[180px] object-contain"
           />
         </Link>
@@ -47,13 +46,6 @@ export function Header() {
           >
             Contact Us
           </button>
-          <Link
-            to="/contact"
-            className="inline-flex rounded-lg p-2 text-white transition hover:bg-white/10 md:hidden"
-            aria-label="Open contact page"
-          >
-            <Menu size={24} aria-hidden="true" />
-          </Link>
         </div>
       </nav>
     </header>

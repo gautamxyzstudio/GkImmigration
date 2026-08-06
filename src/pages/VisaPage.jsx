@@ -246,8 +246,8 @@ export function VisaPage() {
   return (
     <>
       <Seo
-        title="Visa Services | GK Immigration"
-        description="Get tourist, visitor, study, and business visa support from GK Immigration."
+        title="Visa Services | GK Immigrations"
+        description="Get tourist, visitor, study, and business visa support from GK Immigrations."
       />
       <HeroSection
         title="Get Your Visa Approved Without Hassle"
@@ -370,7 +370,7 @@ export function VisaPage() {
               </h2>
               <p className="mt-2 text-on-surface-variant">
                 Real visa approvals and moments of trust from our clients at GK
-                Immigration.
+                Immigrations.
               </p>
             </div>
             <Link
