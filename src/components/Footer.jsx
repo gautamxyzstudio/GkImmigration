@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Globe2, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import { Globe2, Mail, MessageCircle, Phone } from "lucide-react";
 import {
   FaFacebook,
   FaInstagram,
@@ -102,7 +102,7 @@ const SOCIAL_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-outline-variant bg-slate-50 pb-24 font-body text-sm md:pb-0">
-      <div className="container-shell grid gap-10 py-12 md:grid-cols-[1.25fr_1fr_1fr_1fr]">
+      <div className="container-shell md:px-12 px-6 md:grid gap-10 py-12 md:grid-cols-[1.25fr_1fr_1fr_1fr]">
         <section aria-labelledby="footer-brand">
           <Link
             to="/"
@@ -120,15 +120,31 @@ export function Footer() {
             insurance, and global journey planning.
           </p>
           <address className="mt-6 space-y-3 not-italic text-on-surface-variant">
-            <p className="flex gap-2">
-              <MapPin
-                className="mt-0.5 shrink-0 text-primary"
-                size={18}
-                aria-hidden="true"
+            <p className="flex items-start gap-2">
+              <img
+                src="https://flagcdn.com/w40/in.png"
+                alt="India"
+                className="mt-1 h-3.5 w-5 shrink-0 rounded-xs border border-slate-200 object-cover"
               />
-              {OFFICE.address}
+              <span>{OFFICE.address}</span>
             </p>
-            <p className="flex gap-2">
+            <p className="flex items-start gap-2">
+              <img
+                src="https://flagcdn.com/w40/ca.png"
+                alt="Canada"
+                className="mt-1 h-3.5 w-5 shrink-0 rounded-xs border border-slate-200 object-cover"
+              />
+              <span>25 Telegram Mews, Toronto, ON M5V 3Z1, Canada</span>
+            </p>
+            <p className="flex items-start gap-2">
+              <img
+                src="https://flagcdn.com/w40/au.png"
+                alt="Australia"
+                className="mt-1 h-3.5 w-5 shrink-0 rounded-xs border border-slate-200 object-cover"
+              />
+              <span>Thornhill Park VIC 3335, Australia</span>
+            </p>
+            <p className="flex gap-2 md:hidden">
               <Phone
                 className="mt-0.5 shrink-0 text-primary"
                 size={18}
@@ -138,7 +154,7 @@ export function Footer() {
                 {OFFICE.phone}
               </a>
             </p>
-            <p className="flex gap-2">
+            <p className="flex gap-2 md:hidden">
               <Mail
                 className="mt-0.5 shrink-0 text-primary"
                 size={18}
@@ -149,7 +165,7 @@ export function Footer() {
               </a>
             </p>
           </address>
-          <div className="mt-6 flex flex-wrap items-center gap-2 text-outline">
+          <div className="my-6 flex flex-wrap items-center gap-4 text-outline md:hidden">
             <a
               href="/"
               className="flex h-9 w-9 items-center justify-center rounded-lg border border-outline-variant/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:text-primary hover:shadow-sm"
@@ -166,86 +182,128 @@ export function Footer() {
             >
               <MessageCircle size={18} />
             </a>
-            {SOCIAL_LINKS.slice(0, 3).map(
-              ({ name, href, icon: Icon, hoverColor }) => (
-                <a
-                  key={name}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex h-9 w-9 items-center justify-center rounded-lg border border-outline-variant/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm ${hoverColor}`}
-                  aria-label={`Follow GK Immigrations on ${name}`}
-                >
-                  <Icon size={18} />
-                </a>
-              ),
-            )}
-          </div>
-          <div className="mt-3 flex flex-wrap items-center gap-2 text-outline">
-            {SOCIAL_LINKS.slice(3, 7).map(
-              ({ name, href, icon: Icon, hoverColor }) => (
-                <a
-                  key={name}
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`flex h-9 w-9 items-center justify-center rounded-lg border border-outline-variant/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm ${hoverColor}`}
-                  aria-label={`Follow GK Immigrations on ${name}`}
-                >
-                  <Icon size={18} />
-                </a>
-              ),
-            )}
-          </div>
-        </section>
-        <section aria-labelledby="footer-links">
-          <h2
-            id="footer-links"
-            className="font-heading text-headline-sm text-primary"
-          >
-            Quick Links
-          </h2>
-          <ul className="mt-4 space-y-3 text-on-surface-variant">
-            {NAV_ITEMS.map((item) => (
-              <li key={item.href}>
-                <Link to={item.href} className="hover:text-primary">
-                  {item.label}
-                </Link>
-              </li>
+            {SOCIAL_LINKS.map(({ name, href, icon: Icon, hoverColor }) => (
+              <a
+                key={name}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex h-9 w-9 items-center justify-center rounded-lg border border-outline-variant/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm ${hoverColor}`}
+                aria-label={`Follow GK Immigrations on ${name}`}
+              >
+                <Icon size={18} />
+              </a>
             ))}
-          </ul>
+          </div>
         </section>
-        <section aria-labelledby="footer-services">
-          <h2
-            id="footer-services"
-            className="font-heading text-headline-sm text-primary"
-          >
-            Services
-          </h2>
-          <ul className="mt-4 space-y-3 text-on-surface-variant">
-            <li>Tourist and visitor visas</li>
-            <li>Study visa guidance</li>
-            <li>Domestic and international tours</li>
-            <li>Travel insurance consultation</li>
-          </ul>
-        </section>
-        <section aria-labelledby="footer-support">
-          <h2
-            id="footer-support"
-            className="font-heading text-headline-sm text-primary"
-          >
-            Support
-          </h2>
-          <ul className="mt-4 space-y-3 text-on-surface-variant">
-            <li>Sitemap</li>
-            <li>Partner Login</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-          </ul>
-        </section>
+        <div className="col-span-3 md:grid grid-cols-3 md:gap-10 gap-5 flex flex-col">
+          <section aria-labelledby="footer-links">
+            <h2
+              id="footer-links"
+              className="font-heading text-headline-sm text-primary"
+            >
+              Quick Links
+            </h2>
+            <ul className="mt-4 space-y-3 text-on-surface-variant">
+              {NAV_ITEMS.map((item) => (
+                <li key={item.href}>
+                  <Link to={item.href} className="hover:text-primary">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+          <section aria-labelledby="footer-services">
+            <h2
+              id="footer-services"
+              className="font-heading text-headline-sm text-primary"
+            >
+              Services
+            </h2>
+            <ul className="mt-4 space-y-3 text-on-surface-variant">
+              <li>Tourist and visitor visas</li>
+              <li>Study visa guidance</li>
+              <li>Domestic and international tours</li>
+              <li>Travel insurance consultation</li>
+            </ul>
+          </section>
+          <section aria-labelledby="footer-support">
+            <h2
+              id="footer-support"
+              className="font-heading text-headline-sm text-primary"
+            >
+              Support
+            </h2>
+            <ul className="mt-4 space-y-3 text-on-surface-variant">
+              <li>Sitemap</li>
+              <li>Partner Login</li>
+              <li>Privacy Policy</li>
+              <li>Terms of Service</li>
+            </ul>
+          </section>
+
+          <div className="mt-6 md:flex flex-wrap items-start gap-x-20 gap-y-6 text-outline col-span-3 hidden">
+            <div className="flex flex-col gap-y-4">
+              <p className="flex gap-2">
+                <Phone
+                  className="mt-0.5 shrink-0 text-primary"
+                  size={18}
+                  aria-hidden="true"
+                />
+                <a href={`tel:${OFFICE.phone}`} className="hover:text-primary">
+                  {OFFICE.phone}
+                </a>
+              </p>
+              <p className="flex gap-2">
+                <Mail
+                  className="mt-0.5 shrink-0 text-primary"
+                  size={18}
+                  aria-hidden="true"
+                />
+                <a
+                  href={`mailto:${OFFICE.email}`}
+                  className="hover:text-primary"
+                >
+                  {OFFICE.email}
+                </a>
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-2 text-outline col-span-3">
+              <a
+                href="/"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-outline-variant/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:text-primary hover:shadow-sm"
+                aria-label="Visit GK Immigrations website"
+              >
+                <Globe2 size={18} />
+              </a>
+              <a
+                href={OFFICE.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-outline-variant/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:text-[#25D366] hover:bg-[#25D366]/10 hover:shadow-sm"
+                aria-label="Chat on WhatsApp"
+              >
+                <MessageCircle size={18} />
+              </a>
+              {SOCIAL_LINKS.map(({ name, href, icon: Icon, hoverColor }) => (
+                <a
+                  key={name}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex h-9 w-9 items-center justify-center rounded-lg border border-outline-variant/60 bg-white transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm ${hoverColor}`}
+                  aria-label={`Follow GK Immigrations on ${name}`}
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
-      <div className="border-t border-outline-variant py-4 text-center text-body-sm text-outline">
-        <div className="container-shell flex flex-row justify-between items-center">
+      <div className="border-t border-outline-variant py-4 text-body-sm text-outline">
+        <div className="container-shell flex flex-row gap-y-2 flex-wrap justify-between items-center">
           <span>
             {" "}
             © {new Date().getFullYear()} GK Immigrations. Your Trusted Global

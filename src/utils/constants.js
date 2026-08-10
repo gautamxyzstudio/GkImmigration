@@ -11,11 +11,10 @@ export const OFFICE = {
   label: "GK Immigrations, Bhawanigarh",
   address:
     "GK Immigrations, Near SBI Bank, New Bus Stand, Bhawanigarh, Punjab 148026",
-  // TODO(project-owner): Confirm the final office pin. These coordinates target New Bus Stand Bhawanigarh.
   coordinates: [30.26479, 76.04449],
-  phone: "+91-84370-26369",
-  email: "info@gkimmigration.com",
-  whatsappUrl: "https://wa.me/918437026369",
+  phone: "+91-7470251000",
+  email: "info@gkimmigrations.com",
+  whatsappUrl: "https://wa.me/917470251000",
   socials: {
     facebook: "https://www.facebook.com/share/1BhdB9K636/",
     instagram: "https://www.instagram.com/gkimmigrations?igsh=bXBibmN1ZTQxNXoy",
@@ -23,14 +22,14 @@ export const OFFICE = {
     twitter: "https://x.com/Immigrationgk",
     youtube: "https://youtube.com/@gkimmigration?si=gH4xgyih-HfzajFu",
     sharechat: "https://sharechat.com/profile/4031308681?d=n",
-    snapchat: "https://www.snapchat.com/add/gk_immigrations?share_id=Y_-D_VG8i_k&locale=en-IN",
+    snapchat:
+      "https://www.snapchat.com/add/gk_immigrations?share_id=Y_-D_VG8i_k&locale=en-IN",
   },
 };
 
 export const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Visa", href: "/visas" },
-  // { label: 'Packages', href: '/destinations' },
   { label: "Travel Insurance", href: "/insurance" },
   { label: "Gallery", href: "/gallery" },
   { label: "Contact Us", href: "/contact" },
