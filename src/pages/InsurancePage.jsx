@@ -41,6 +41,59 @@ const SLIDER_IMAGES = [
   },
 ];
 
+const TRUSTED_TRAVELERS = [
+  {
+    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=150",
+    alt: "Satisfied traveler portrait 1",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=150",
+    alt: "Satisfied traveler portrait 2",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150",
+    alt: "Satisfied traveler portrait 3",
+  },
+];
+
+const INSURANCE_PROVIDERS = [
+  {
+    id: 1,
+    logo: "/insurance/1.png",
+    alt: "Insurance Partner 1",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 2,
+    logo: "/insurance/2.png",
+    alt: "Insurance Partner 2",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 3,
+    logo: "/insurance/3.png",
+    alt: "Insurance Partner 3",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 4,
+    logo: "/insurance/4.png",
+    alt: "Insurance Partner 4",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 5,
+    logo: "/insurance/5.png",
+    alt: "Insurance Partner 5",
+    width: 650,
+    height: 975,
+  },
+];
+
 const insuranceBenefits = [
   {
     icon: BriefcaseMedical,
@@ -224,10 +277,13 @@ export function InsurancePage() {
             </div>
             <div className="mt-8 flex items-center gap-5">
               <div className="flex -space-x-3">
-                {[1, 2, 3].map((item) => (
-                  <span
-                    key={item}
-                    className="h-10 w-10 rounded-full border-2 border-white bg-primary-fixed-dim insurance-pulse"
+                {TRUSTED_TRAVELERS.map((traveler, index) => (
+                  <img
+                    key={index}
+                    src={traveler.src}
+                    alt={traveler.alt}
+                    className="h-10 w-10 rounded-full border-2 border-white object-cover shadow-sm"
+                    loading="lazy"
                   />
                 ))}
               </div>
@@ -270,19 +326,20 @@ export function InsurancePage() {
           <h3 className="mb-8 text-center font-body text-label-sm uppercase tracking-widest text-on-surface-variant">
             Partnering with the world&apos;s most trusted providers
           </h3>
-          <div className="grid grid-cols-2 gap-5 opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0 md:grid-cols-5">
-            {[
-              "TATA AIG",
-              "ICICI LOMBARD",
-              "HDFC ERGO",
-              "BAJAJ ALLIANZ",
-              "RELIANCE",
-            ].map((provider) => (
+          <div className="grid grid-cols-2 items-center gap-5 md:grid-cols-5">
+            {INSURANCE_PROVIDERS.map((provider) => (
               <div
-                key={provider}
-                className="mx-auto flex h-12 w-32 items-center justify-center rounded bg-slate-300 px-3 font-heading text-xs font-bold text-slate-600 transition hover:-translate-y-1"
+                key={provider.id}
+                className="mx-auto flex aspect-[975/650] w-full max-w-[180px] items-center justify-center rounded-xl bg-white p-0 shadow-sm ring-1 ring-slate-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                {provider}
+                <img
+                  src={provider.logo}
+                  alt={provider.alt}
+                  width={provider.width}
+                  height={provider.height}
+                  className="h-full w-full rounded-lg object-cover"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>

@@ -212,14 +212,62 @@ const instagramReels = [
 ];
 
 const intakePartners = [
-  "Sault College",
-  "UOW",
-  "Canadore",
-  "Conestoga",
-  "Philippine Airlines",
-  "Thai Airways",
-  "Qatar Airways",
-  "British Airways",
+  {
+    id: 1,
+    logo: "/logos/1.png",
+    alt: "Intake Partner 1",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 2,
+    logo: "/logos/2.png",
+    alt: "Intake Partner 2",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 3,
+    logo: "/logos/3.png",
+    alt: "Intake Partner 3",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 4,
+    logo: "/logos/4.png",
+    alt: "Intake Partner 4",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 5,
+    logo: "/logos/5.png",
+    alt: "Intake Partner 5",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 6,
+    logo: "/logos/6.png",
+    alt: "Intake Partner 6",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 7,
+    logo: "/logos/7.png",
+    alt: "Intake Partner 7",
+    width: 650,
+    height: 975,
+  },
+  {
+    id: 8,
+    logo: "/logos/8.png",
+    alt: "Intake Partner 8",
+    width: 650,
+    height: 975,
+  },
 ];
 
 export function HomePage() {
@@ -520,13 +568,20 @@ export function HomePage() {
               leading global airlines to ensure your success.
             </p>
           </Reveal>
-          <div className="grid grid-cols-2 items-center gap-8 opacity-80 md:grid-cols-4">
+          <div className="grid grid-cols-2 items-center gap-6 md:grid-cols-4">
             {intakePartners.map((partner) => (
               <div
-                key={partner}
-                className="mx-auto flex h-14 w-40 items-center justify-center rounded bg-slate-200 px-4 font-heading text-sm font-bold text-slate-500 grayscale transition hover:grayscale-0"
+                key={partner.id}
+                className="mx-auto flex aspect-[975/650] w-full max-w-[200px] items-center justify-center rounded-xl bg-white p-1 shadow-sm ring-1 ring-slate-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-md"
               >
-                {partner}
+                <img
+                  src={partner.logo}
+                  alt={partner.alt}
+                  width={partner.width}
+                  height={partner.height}
+                  className="h-full w-full rounded-lg object-cover"
+                  loading="lazy"
+                />
               </div>
             ))}
           </div>
